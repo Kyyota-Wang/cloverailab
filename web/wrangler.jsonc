@@ -24,8 +24,10 @@
     // than a silently unprotected paid endpoint.
     "REQUIRE_TURNSTILE": "true",
     // Site keys are public by design; they appear in page source either way.
-    // Replace with the site key from the Turnstile widget for this domain.
-    "TURNSTILE_SITE_KEY": ""
+    // The matching secret is a Worker secret, never config. The widget is
+    // pinned to cloverailab.pumpkin-ai-v2.workers.dev, cloverailab.com and
+    // www.cloverailab.com -- a token solved anywhere else is refused.
+    "TURNSTILE_SITE_KEY": "0x4AAAAAAESMRvL_5zgM0RtZ"
   }
 
   // Secrets are NOT set here. Set them in the Cloudflare dashboard under

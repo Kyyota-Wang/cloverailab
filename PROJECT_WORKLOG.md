@@ -25,8 +25,8 @@ Argument 任务 2023-09-22 已停考，有意不做。
 | 前端 | **2026-08-16 重建完成**，Vite + React + TS，见 §4 |
 | 品牌 / Logo | 完成，见 §5 |
 | 测试 | 72/72 通过，`npm run typecheck` 与 `npm run typecheck:ui` 干净 |
-| 鉴权 / 限流 | Turnstile + 每 IP 限流已实现，见 §9。**部署时必须确认 secret 已设** |
-| Cloudflare 部署 | 未部署 |
+| 鉴权 / 限流 | Turnstile + 每 IP 限流已上线并实测，见 §9 |
+| Cloudflare 部署 | **已上线**，见 §9.1 |
 
 ## 3. 仓库与版本
 
@@ -171,7 +171,45 @@ cd tools; python extract_rubric.py; python extract_anchors.py; python extract_pr
 
 **fail closed**：`REQUIRE_TURNSTILE=true` 时缺 `TURNSTILE_SECRET` 直接 500。这是唯一一种「看起来正常但付费端点裸奔」的失效模式，必须让它响。本地开发在 `.dev.vars` 里设 `false` 跳过。
 
-⚠️ **Rate Limiting binding 是边缘位置级、最终一致的限制，不是精确的全局计费器。**真正的预算兜底是 **Anthropic 账户的 spend cap**，必须单独设，不能省。
+⚠️ **Rate Limiting binding 是边缘位置级、最终一致的限制，不是精确的全局计费器。**
+
+2026-08-17 生产实测（`PAID_LIMIT` 配置 3/60s、`LIGHT_LIMIT` 配置 20/60s）：
+
+| 测试 | 结果 |
+|---|---|
+| 连发 5 次 `/api/review` | **0 次被拦** |
+| 连发 15 次 `/api/review` | 放行 11、拦截 4 |
+| 连发 30 次 `/api/precheck` | **0 次被拦** |
+
+本地 `wrangler dev` 里同样的配置是**精确**的（第 4 次就 429）。也就是说**本地测出来的限流数字不能代表生产**。
+
+结论：把它当成抗持续滥用的兜底，不要当成每分钟闸门。真正的硬闸是两个：
+
+1. **Turnstile** —— 每个请求单独验证，无 token / 伪造 token 一律 403，这是确定性的
+2. **Anthropic 账户余额上限** —— 当前是预付 $20 且未开 auto-reload，所以最坏损失有硬顶
+
+配置的数字可以调得比想要的效果更严（比如想要 5/分钟就配 3/分钟），因为实际生效值总是更松。
+
+### 9.1 生产部署
+
+| 项 | 值 |
+|---|---|
+| Worker 名 | `cloverailab` |
+| 地址 | `https://cloverailab.pumpkin-ai-v2.workers.dev` |
+| 首次部署 version | `d4367c2b-2205-4d21-9b1b-88c7be5e9aac`（无 Turnstile site key，付费端点 fail closed） |
+| 当前 version | `25bcf25b-3146-451f-8fa7-c835222d72df` |
+| Turnstile widget | Managed 模式，hostname 白名单含 workers.dev 地址 + `cloverailab.com` + `www.cloverailab.com` |
+| 自定义域名 | **未绑定**。`cloverailab.com` 已在 Cloudflare（NS 为 nancy/matt），无 A 记录 |
+
+`pumpkin-ai-v2` 是**账号级的 workers.dev 子域名**，不是项目名 —— 账号下每个 Worker 都是 `<worker名>.pumpkin-ai-v2.workers.dev`。改它会同时改掉 Pumpkin AI 的地址，不要动。绑定自定义域名后可以把 workers.dev 路由关掉。
+
+2026-08-17 线上实测结果：
+
+- 页面、`/api/topics`（158 题）、`/api/precheck` 正常
+- `/api/review` 无 token → 403；伪造 token → 403（siteverify 真实拒绝，证明 `TURNSTILE_SECRET` 已设且有效）
+- 真实浏览器端到端：Turnstile 脚本加载 → 铸 token → siteverify 通过 → 后端 200
+- 照抄题目的机械 0 分路径：`usage.calls === 0`、`estimatedCostUsd === 0`，界面显示「未调用模型 · 零成本」
+- **尚未验证**：`ANTHROPIC_API_KEY` 是否已设。机械 0 分路径在碰 provider 之前就短路了，而 `createProvider` 缺 key 也不抛错（构造函数会回退去找 OAuth profile），所以那次 200 证明不了这一点。要确认只有两条路：面板上看 secret 列表，或者跑一次真实批改（约 $0.15）
 
 以下仍未做，视情况再评估：
 
@@ -181,13 +219,19 @@ cd tools; python extract_rubric.py; python extract_anchors.py; python extract_pr
 
 ## 10. 已踩过的工程坑
 
-### 10.1 Node 不在 PATH 里
+### 10.1 Node 不在 PATH 里，而且消失过一次
 
-这台机器的 Node 24.19 装在 `C:\Users\kangc\AppData\Local\nodejs`，**不在系统 PATH**。命令前需要：
+这台机器的 Node 24.19 原本装在 `C:\Users\kangc\AppData\Local\nodejs`（**不在系统 PATH**），命令前需要：
 
 ```powershell
 $env:PATH = "$env:LOCALAPPDATA\nodejs;$env:PATH"
 ```
+
+⚠️ **2026-08-17：这个目录整个消失了。**同一天早些时候还能正常 `npm install` / `npm run deploy`，之后 `Test-Path` 与 `where.exe node` 都找不到，`$ProgramFiles\nodejs`、nvm、fnm、volta、scoop 各常见位置也都没有。原因未查明（未做任何卸载操作）。
+
+后果：**不影响已上线的 Worker**（它跑在 Cloudflare 上），但本地的 `npm run build` / `npm test` / `npm run deploy` / `wrangler` 全部不可用。
+
+恢复：从 nodejs.org 重装 Node 24+，或 `winget install OpenJS.NodeJS.LTS`，然后 `npm install` 重建 `node_modules`。装完确认 `node -v` ≥ 24。
 
 ### 10.2 `wrangler dev` 在启动时给 `web/dist` 拍快照
 
