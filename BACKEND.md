@@ -37,7 +37,41 @@ npm run dev
 
 **前三个免费且瞬时，后三个慢且花钱。** 界面设计的核心矛盾就在这条线上，见 §2。
 
-错误一律是 `{ "error": "人类可读的英文说明" }`。**400 = 用户可自行修正**（缺 key、题目变体无法识别、目标分数非法），**500 = 后端问题**。错误文案是写给人看的，可以直接显示。
+错误一律是 `{ "error": "人类可读的英文说明" }`。**400 = 用户可自行修正**（缺 key、题目变体无法识别、目标分数非法），**403 = 人机验证未通过**，**429 = 触发限流**，**500 = 后端问题**。错误文案是写给人看的，可以直接显示。
+
+---
+
+## §1.5 滥用与成本保护（2026-08-16 加）
+
+`/api/review` `/api/write` `/api/chat` 三个端点在**碰到 provider 之前**要过两道关。顺序是先限流后验证 —— 限流是本地的、免费的，Turnstile 要一次网络往返。
+
+### 每 IP 限流
+
+Cloudflare Rate Limiting binding，key 是 `端点:CF-Connecting-IP`：
+
+| binding | 覆盖 | 额度 |
+|---|---|---|
+| `PAID_LIMIT` | `/api/review` `/api/write` | 3 次 / 60 秒 |
+| `LIGHT_LIMIT` | `/api/chat` `/api/precheck` `/api/resolve` | 20 次 / 60 秒 |
+
+超限返回 **429**。⚠️ 这个 binding 是**边缘位置级、最终一致**的限制，不是精确的全局计费器。真正的预算兜底是 Anthropic 账户上的 spend cap。
+
+### Turnstile
+
+请求体里带 `turnstileToken`。Worker 调 siteverify，除了 `success` 还校验：
+
+- **`action`** 必须等于端点名（`review` / `write` / `chat`）—— 为 chat 铸的 token 不能用在 review 上
+- **`hostname`** 必须等于请求的 hostname —— 别人把页面搬走解出来的 token 无效
+
+Token **一次性**，前端每次请求现铸一个（`web/app/src/api/turnstile.ts`）。批改要 60–90 秒，复用同一个 token 第二次必然失败。
+
+### fail closed
+
+`REQUIRE_TURNSTILE=true`（生产在 `web/wrangler.jsonc` 的 `vars` 里设）时，**缺 `TURNSTILE_SECRET` 直接 500**，而不是静默放行。这是唯一一种「看起来一切正常但付费端点其实裸奔」的失效模式，必须让它响。
+
+本地开发在 `web/.dev.vars` 里设 `REQUIRE_TURNSTILE=false` 即可跳过（模板见 `web/.dev.vars.example`）。
+
+`GET /api/config` 返回 `{ "turnstileSiteKey": string | null }`。site key 是公开的（本来就在页面源码里），null 表示未配置，前端会跳过验证 —— 生产端仍然会拒。
 
 ---
 
@@ -252,7 +286,7 @@ npm run dev
 
 | 缺口 | 影响 |
 |---|---|
-| **无鉴权、无限流** | 部署成公开地址 = 任何人都能烧 API 额度。**上线前必须加。** |
+| ~~**无鉴权、无限流**~~ | ✅ 2026-08-16 已加：Turnstile + 每 IP 限流，见 §1.5。 |
 | **无流式输出** | 60–90 秒只能等。加 SSE 是明显的体验改进，需要改 provider 层。 |
 | **无持久化** | 刷新即丢。需要 D1（提交记录）+ KV（同一篇作文的结果缓存）。 |
 | **无 Argument 任务** | 2023-09-22 已停考，有意不做。 |

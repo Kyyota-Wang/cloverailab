@@ -45,6 +45,11 @@ export interface TopicsResponse {
   variantCounts: Partial<Record<TaskVariant, number>>;
 }
 
+export interface ConfigResponse {
+  /** Null when Turnstile is not configured, which is normal in local dev. */
+  turnstileSiteKey: string | null;
+}
+
 export interface PromptSpec {
   statement: string;
   instruction: string;

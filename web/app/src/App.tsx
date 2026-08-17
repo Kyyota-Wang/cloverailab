@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { api, ApiError } from "./api/client";
+import { configureTurnstile } from "./api/turnstile";
 import type {
   Precheck,
   PromptSpec,
@@ -103,6 +104,14 @@ export function App() {
       .catch((cause: unknown) => {
         setLoadError(cause instanceof ApiError ? cause.message : String(cause));
       });
+
+    // The site key is public and only gates whether a challenge can be shown.
+    // If this fails, the paid endpoints will reject the request anyway, so
+    // there is nothing useful to tell the user until they try one.
+    api
+      .config()
+      .then((data) => configureTurnstile(data.turnstileSiteKey))
+      .catch(() => configureTurnstile(null));
   }, []);
 
   const selectedTopic = selection === CUSTOM ? null : topics[selection];

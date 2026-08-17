@@ -7,8 +7,30 @@
   // The frontend is a Vite build (source in web/app). Run `npm run build`
   // before `wrangler dev` or `wrangler deploy` -- both npm scripts already do.
   "assets": { "directory": "./dist", "binding": "ASSETS" },
-  "observability": { "enabled": true }
-  // Secrets are NOT set here. Set them once with:
-  //   npx wrangler secret put ANTHROPIC_API_KEY
+  "observability": { "enabled": true },
+
+  // Per-IP ceilings, checked before any provider call. Edge-local and
+  // eventually consistent -- a floor under abuse, NOT a precise budget meter.
+  // The real backstop is the spend cap on the Anthropic account.
+  "ratelimits": [
+    // /api/review and /api/write: about $0.15 and 60-105 seconds each.
+    { "name": "PAID_LIMIT", "namespace_id": "1001", "simple": { "limit": 3, "period": 60 } },
+    // /api/chat, /api/precheck, /api/resolve: cheap or free, but not free to serve.
+    { "name": "LIGHT_LIMIT", "namespace_id": "1002", "simple": { "limit": 20, "period": 60 } }
+  ],
+
+  "vars": {
+    // Fail closed: with this on, a missing TURNSTILE_SECRET is a 500 rather
+    // than a silently unprotected paid endpoint.
+    "REQUIRE_TURNSTILE": "true",
+    // Site keys are public by design; they appear in page source either way.
+    // Replace with the site key from the Turnstile widget for this domain.
+    "TURNSTILE_SITE_KEY": ""
+  }
+
+  // Secrets are NOT set here. Set them in the Cloudflare dashboard under
+  // Workers -> this Worker -> Settings -> Variables and Secrets, or with:
+  //   npx wrangler secret put ANTHROPIC_API_KEY --config web/wrangler.jsonc
+  //   npx wrangler secret put TURNSTILE_SECRET  --config web/wrangler.jsonc
   // For local `wrangler dev`, put them in web/.dev.vars instead (gitignored).
 }

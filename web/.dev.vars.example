@@ -1,0 +1,24 @@
+# Copy to web/.dev.vars for local `wrangler dev`. That file is gitignored.
+#
+# These are the Worker's environment bindings. They are separate from the
+# project-root .env, which is only read by Node scripts such as the eval
+# harness -- the Worker has no filesystem and never reads it.
+
+# --- Credentials -------------------------------------------------------
+ANTHROPIC_API_KEY=
+GEMINI_API_KEY=
+
+LLM_PROVIDER=anthropic
+REVIEWER_MODEL=claude-sonnet-5
+WRITER_MODEL=claude-opus-5
+
+# --- Abuse protection --------------------------------------------------
+# Production sets REQUIRE_TURNSTILE=true in web/wrangler.jsonc, which makes a
+# missing TURNSTILE_SECRET a hard 500 instead of an unprotected paid endpoint.
+# Locally you usually have no Turnstile widget, so turn the requirement off:
+REQUIRE_TURNSTILE=false
+
+# Fill these in only if you want to exercise the real Turnstile path locally.
+# The site key is public; the secret is not and must never be committed.
+# TURNSTILE_SITE_KEY=
+# TURNSTILE_SECRET=

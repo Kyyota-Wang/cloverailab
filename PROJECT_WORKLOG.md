@@ -25,7 +25,7 @@ Argument 任务 2023-09-22 已停考，有意不做。
 | 前端 | **2026-08-16 重建完成**，Vite + React + TS，见 §4 |
 | 品牌 / Logo | 完成，见 §5 |
 | 测试 | 72/72 通过，`npm run typecheck` 与 `npm run typecheck:ui` 干净 |
-| 鉴权 / 限流 | **没有。公开部署前必须加，见 §9** |
+| 鉴权 / 限流 | Turnstile + 每 IP 限流已实现，见 §9。**部署时必须确认 secret 已设** |
 | Cloudflare 部署 | 未部署 |
 
 ## 3. 仓库与版本
@@ -158,20 +158,26 @@ npm run deploy       # 构建 + 部署到 Cloudflare
 cd tools; python extract_rubric.py; python extract_anchors.py; python extract_prompts.py; python build_exemplars.py; python validate_kb.py; python build_testsets.py
 ```
 
-## 9. 上线前必须做的事
+## 9. 滥用与成本保护（2026-08-16 实现）
 
-`BACKEND.md` §3 明确列为"上线前必须加"。**当前状态是：部署成公开地址 = 任何人都能烧 API 额度。**
+完整契约见 `BACKEND.md` §1.5。方案照搬 Pumpkin AI 的做法。
 
-`/api/review` 和 `/api/write` 每次调用约 $0.15，无鉴权无限流。脚本化调用 1000 次 = $150，成本极低、门槛极低。
+`/api/review` `/api/write` `/api/chat` 在**碰到 provider 之前**过两道关，顺序是先限流（本地、免费）后 Turnstile（要网络往返）：
 
-Pumpkin AI（`pumpkinsolve` 项目）已经解决过同样的问题，方案可以直接搬：
+1. **每 IP 限流**（Cloudflare Rate Limiting binding，key 为 `端点:CF-Connecting-IP`）
+   - `PAID_LIMIT`：review + write，3 次 / 60 秒
+   - `LIGHT_LIMIT`：chat + precheck + resolve，20 次 / 60 秒
+2. **Turnstile**：Worker 端 siteverify，除 `success` 外校验 `action`（必须等于端点名）和 `hostname`（必须等于请求域名）。Token 一次性，前端每次请求现铸。
 
-1. **Turnstile 保护每一次付费请求**，不只是最终表单。Worker 服务端验证 siteverify 的 success、action 和 hostname。Token 一次性，前端每轮必须 reset 取新 token。
-2. **每 IP 限流**，在调用 LLM 之前执行。Pumpkin 的参数是 chat 60 秒 8 次、submit 60 秒 2 次；本项目单次成本高得多，应该更严。
-3. **Provider spend cap** 作为最后一道成本保险。
-4. Cloudflare Rate Limiting binding 是边缘位置级、最终一致的限制，**不是精确的全局计费器**，不能当唯一预算控制。
+**fail closed**：`REQUIRE_TURNSTILE=true` 时缺 `TURNSTILE_SECRET` 直接 500。这是唯一一种「看起来正常但付费端点裸奔」的失效模式，必须让它响。本地开发在 `.dev.vars` 里设 `false` 跳过。
 
-另一个更快的过渡方案：**Cloudflare Access**（零代码，邮箱白名单）。适合"先上线给自己和少数人用"的第一版，不需要改任何代码。
+⚠️ **Rate Limiting binding 是边缘位置级、最终一致的限制，不是精确的全局计费器。**真正的预算兜底是 **Anthropic 账户的 spend cap**，必须单独设，不能省。
+
+以下仍未做，视情况再评估：
+
+- 用户账号 / 配额（当前任何通过验证的人都能用）
+- KV 或 D1 的日级别用量上限（binding 只支持 10 秒和 60 秒窗口）
+- 匿名用量统计（Pumpkin AI 用 D1 做了一套，可以搬）
 
 ## 10. 已踩过的工程坑
 

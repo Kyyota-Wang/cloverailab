@@ -1,5 +1,7 @@
+import { getToken } from "./turnstile";
 import type {
   ChatResponse,
+  ConfigResponse,
   PrecheckResponse,
   ResolveResponse,
   ReviewResponse,
@@ -64,8 +66,28 @@ function post<T>(path: string, body: unknown, signal?: AbortSignal): Promise<T> 
   });
 }
 
+/**
+ * A guarded request: mint a fresh Turnstile token for this endpoint, then send.
+ *
+ * The token goes in the body rather than a header so it travels with the same
+ * JSON the Worker already parses, and the action is the endpoint name so a
+ * token minted for `chat` cannot be spent on `review`.
+ */
+async function guardedPost<T>(path: string, body: Record<string, unknown>): Promise<T> {
+  let turnstileToken: string | null;
+  try {
+    turnstileToken = await getToken(path.slice("/api/".length));
+  } catch (cause) {
+    throw new ApiError(cause instanceof Error ? cause.message : String(cause), 403);
+  }
+  return post<T>(path, turnstileToken ? { ...body, turnstileToken } : body);
+}
+
 export const api = {
   topics: () => request<TopicsResponse>("/api/topics"),
+
+  /** Public runtime configuration. Free, called once at startup. */
+  config: () => request<ConfigResponse>("/api/config"),
 
   /** Free and instant. Called while the user types a custom prompt. */
   resolve: (body: { statement: string; instruction?: string }, signal?: AbortSignal) =>
@@ -75,19 +97,19 @@ export const api = {
   precheck: (body: { statement: string; instruction?: string; essay: string }) =>
     post<PrecheckResponse>("/api/precheck", body),
 
-  /** 60-90 seconds, about $0.15. */
+  /** 60-90 seconds, about $0.15. Turnstile-guarded and rate limited. */
   review: (body: { statement: string; instruction?: string; essay: string }) =>
-    post<ReviewResponse>("/api/review", body),
+    guardedPost<ReviewResponse>("/api/review", body),
 
-  /** 40-105 seconds, about $0.15. */
+  /** 40-105 seconds, about $0.15. Turnstile-guarded and rate limited. */
   write: (body: {
     statement: string;
     instruction?: string;
     targetScore?: number;
     guidance?: string;
-  }) => post<WriteResponse>("/api/write", body),
+  }) => guardedPost<WriteResponse>("/api/write", body),
 
   /** About 20x cheaper than the call that produced the result being discussed. */
   chat: (body: { context: string; question: string }) =>
-    post<ChatResponse>("/api/chat", body),
+    guardedPost<ChatResponse>("/api/chat", body),
 };

@@ -24,6 +24,11 @@ import { precheck, formatPrecheck } from "../../packages/agent/src/reviewer/prec
 import { write } from "../../packages/agent/src/writer/index.ts";
 import type { TaskVariant } from "../../packages/agent/src/types.ts";
 
+/** Cloudflare's Rate Limiting binding. Edge-local and eventually consistent. */
+interface RateLimiter {
+  limit: (options: { key: string }) => Promise<{ success: boolean }>;
+}
+
 interface Env {
   ASSETS: { fetch: (request: Request) => Promise<Response> };
   ANTHROPIC_API_KEY?: string;
@@ -31,6 +36,84 @@ interface Env {
   LLM_PROVIDER?: string;
   REVIEWER_MODEL?: string;
   WRITER_MODEL?: string;
+
+  /** Public Turnstile site key. Served to the client by /api/config. */
+  TURNSTILE_SITE_KEY?: string;
+  /** Turnstile secret. Set with `wrangler secret put`, never in config. */
+  TURNSTILE_SECRET?: string;
+  /**
+   * "true" in production. When set, a missing secret is a hard failure rather
+   * than a silent bypass -- the one failure mode that would leave the paid
+   * endpoints open without anything looking wrong.
+   */
+  REQUIRE_TURNSTILE?: string;
+
+  /** review + write: the endpoints that cost about $0.15 per call. */
+  PAID_LIMIT?: RateLimiter;
+  /** chat, precheck, resolve: cheap or free, but still worth a ceiling. */
+  LIGHT_LIMIT?: RateLimiter;
+}
+
+/**
+ * The client's address, for rate limiting.
+ *
+ * CF-Connecting-IP is set by Cloudflare's edge and cannot be spoofed by the
+ * client. Falling back to a constant means a missing header degrades to one
+ * shared bucket rather than to no limit at all.
+ */
+function clientIp(request: Request): string {
+  return request.headers.get("CF-Connecting-IP") ?? "unknown";
+}
+
+interface TurnstileVerdict {
+  success: boolean;
+  action?: string;
+  hostname?: string;
+  "error-codes"?: string[];
+}
+
+/**
+ * Verify a Turnstile token server side.
+ *
+ * Rendering the widget proves nothing on its own -- the check that matters is
+ * this one. Beyond `success` it also pins `action` and `hostname`, so a token
+ * minted for a different endpoint, or solved on someone else's copy of the
+ * page, is rejected. Tokens are single use; the client fetches a fresh one per
+ * request.
+ */
+async function verifyTurnstile(
+  token: string,
+  secret: string,
+  ip: string,
+  expectedAction: string,
+  expectedHostname: string,
+): Promise<{ ok: true } | { ok: false; reason: string }> {
+  const form = new FormData();
+  form.append("secret", secret);
+  form.append("response", token);
+  if (ip !== "unknown") form.append("remoteip", ip);
+
+  let verdict: TurnstileVerdict;
+  try {
+    const res = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
+      method: "POST",
+      body: form,
+    });
+    verdict = (await res.json()) as TurnstileVerdict;
+  } catch {
+    return { ok: false, reason: "Could not reach the verification service. Try again." };
+  }
+
+  if (!verdict.success) {
+    return { ok: false, reason: "Verification failed. Reload the page and try again." };
+  }
+  if (verdict.action && verdict.action !== expectedAction) {
+    return { ok: false, reason: "Verification did not match this request." };
+  }
+  if (verdict.hostname && verdict.hostname !== expectedHostname) {
+    return { ok: false, reason: "Verification came from a different site." };
+  }
+  return { ok: true };
 }
 
 const json = (data: unknown, status = 200): Response =>
@@ -67,6 +150,13 @@ export default {
       return env.ASSETS.fetch(request);
     }
 
+    // The public half of the Turnstile configuration. Site keys are public by
+    // design -- they appear in the page source either way -- so serving it
+    // here just means the key lives in one place instead of in a build.
+    if (url.pathname === "/api/config") {
+      return json({ turnstileSiteKey: env.TURNSTILE_SITE_KEY || null });
+    }
+
     if (url.pathname === "/api/topics") {
       // Statement trimmed for the picker; the client sends the id back.
       return json({
@@ -98,6 +188,54 @@ export default {
       REVIEWER_MODEL: env.REVIEWER_MODEL,
       WRITER_MODEL: env.WRITER_MODEL,
     };
+
+    // ---- Abuse and cost controls -----------------------------------------
+    //
+    // Both run before the provider is touched. /api/review and /api/write cost
+    // roughly $0.15 each and take no credentials, so an unprotected public URL
+    // is an open tap on the API budget.
+    //
+    // The order is deliberate: rate limiting first, because it is local and
+    // free, and Turnstile second, because it costs a round trip.
+
+    const PAID = new Set(["/api/review", "/api/write"]);
+    const GUARDED = new Set(["/api/review", "/api/write", "/api/chat"]);
+    const paid = PAID.has(url.pathname);
+    const ip = clientIp(request);
+
+    const limiter = paid ? env.PAID_LIMIT : env.LIGHT_LIMIT;
+    if (limiter) {
+      const { success } = await limiter.limit({ key: `${url.pathname}:${ip}` });
+      if (!success) {
+        return fail(
+          paid
+            ? "Too many scoring requests from this address. Each one takes about a minute and costs real money, so they are limited. Wait a minute and try again."
+            : "Too many requests from this address. Wait a minute and try again.",
+          429,
+        );
+      }
+    }
+
+    if (GUARDED.has(url.pathname)) {
+      const requireTurnstile = env.REQUIRE_TURNSTILE === "true";
+      const secret = env.TURNSTILE_SECRET;
+
+      // Fail closed. A production deploy that lost its secret must break
+      // loudly rather than quietly serve an unprotected paid endpoint.
+      if (requireTurnstile && !secret) {
+        return fail("This deployment is missing its abuse-protection secret.", 500);
+      }
+
+      if (secret) {
+        const token = String(body["turnstileToken"] ?? "");
+        if (!token) {
+          return fail("Missing verification. Reload the page and try again.", 403);
+        }
+        const action = url.pathname.slice("/api/".length);
+        const verdict = await verifyTurnstile(token, secret, ip, action, url.hostname);
+        if (!verdict.ok) return fail(verdict.reason, 403);
+      }
+    }
 
     try {
       // Free and instant. Lets the UI confirm what a pasted task instruction
