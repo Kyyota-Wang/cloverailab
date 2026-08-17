@@ -9,17 +9,21 @@
   "assets": { "directory": "./dist", "binding": "ASSETS" },
   "observability": { "enabled": true },
 
-  // The public address. `custom_domain` makes Cloudflare manage the DNS
-  // record and the certificate for a zone in this account, which is what we
-  // want -- a plain route would need the DNS record created separately.
+  // The public addresses. Both serve the app.
   //
-  // Only the apex is bound. www is handled by a zone-level redirect rule to
-  // the apex rather than a second Worker binding, so the site has exactly one
-  // canonical hostname. Binding both here would fight that rule.
+  // The apex is a `custom_domain`, so Cloudflare manages its DNS record and
+  // certificate. www is a plain route instead: the dashboard's Connect domain
+  // dialog matches zones exactly and refuses a subdomain, while the route form
+  // accepts it. A route does not create DNS, so www needs a proxied record of
+  // its own -- an AAAA to the discard address 100:: , which never receives
+  // traffic because the edge hands the request to this Worker first.
   //
-  // The Turnstile widget allows both hostnames, which costs nothing and means
-  // the redirect can be dropped later without touching the widget.
-  "routes": [{ "pattern": "cloverailab.com", "custom_domain": true }],
+  // Both hostnames are on the Turnstile widget's allowlist, which is what lets
+  // a token solved on either one pass the Worker's hostname check.
+  "routes": [
+    { "pattern": "cloverailab.com", "custom_domain": true },
+    { "pattern": "www.cloverailab.com/*", "zone_name": "cloverailab.com" }
+  ],
 
   // Per-IP ceilings, checked before any provider call. Edge-local and
   // eventually consistent -- a floor under abuse, NOT a precise budget meter.
