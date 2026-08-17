@@ -9,6 +9,18 @@
   "assets": { "directory": "./dist", "binding": "ASSETS" },
   "observability": { "enabled": true },
 
+  // The public addresses. `custom_domain` makes Cloudflare manage the DNS
+  // record and the certificate for a zone in this account, which is what we
+  // want -- a plain route would need the DNS record created separately.
+  //
+  // Both hostnames are already on the Turnstile widget's allowlist, so tokens
+  // solved on either are accepted. Adding them in the dashboard has the same
+  // effect; they live here so the deployment is reproducible from the repo.
+  "routes": [
+    { "pattern": "cloverailab.com", "custom_domain": true },
+    { "pattern": "www.cloverailab.com", "custom_domain": true }
+  ],
+
   // Per-IP ceilings, checked before any provider call. Edge-local and
   // eventually consistent -- a floor under abuse, NOT a precise budget meter.
   // The real backstop is the spend cap on the Anthropic account.
