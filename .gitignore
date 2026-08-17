@@ -1,0 +1,40 @@
+# Secrets -- never commit
+.env
+.env.local
+.dev.vars
+Data/Kaggle/API token.txt
+
+# Per-machine tool state. Not secret here, but the same file under Data/ once
+# held a plaintext Kaggle token -- this class of file does not belong in Git.
+.claude/settings.local.json
+Data/.claude/settings.local.json
+
+# Large source archive: 465 MB of cached PDFs, SQLite crawls and JSONL dumps.
+# Everything the agents actually need is extracted into kb/ (235 KB), which IS
+# committed. Regenerate with tools/extract_*.py if you need to re-derive it.
+Data/raw_cache/
+Data/argugpt_raw/
+Data/out/
+Data/gre_human_essays.csv
+Data/gre_human_essays.json
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Node / Cloudflare
+node_modules/
+dist/
+.wrangler/
+
+# Cloudflare local secrets
+web/.dev.vars
+
+# local scratch
+scratch/
+
+# Test sets: tier1 is ETS-published, but tiers 2-4 and the Argument pile are
+# scraped forum essays. Local analysis is fine; redistribution is not.
+# Remove this line if you have confirmed you may publish them.
+测试集合/

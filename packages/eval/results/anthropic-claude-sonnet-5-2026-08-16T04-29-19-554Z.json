@@ -1,0 +1,202 @@
+{
+  "provider": "anthropic",
+  "model": "claude-sonnet-5",
+  "options": {
+    "samples": 1,
+    "leaveOneOut": true,
+    "limit": 6
+  },
+  "metrics": {
+    "all": {
+      "n": 6,
+      "bias": -0.167,
+      "meanAbsoluteError": 0.833,
+      "agreementWithinHalf": 0.167,
+      "agreementWithinOne": 1,
+      "exactAgreement": 0.167,
+      "quadraticWeightedKappa": 0.815,
+      "meanSampleSpread": 0,
+      "worstMisses": [
+        {
+          "id": "sample_issue_score6",
+          "trueScore": 6,
+          "predictedScore": 5,
+          "error": -1
+        },
+        {
+          "id": "sample_issue_score5",
+          "trueScore": 5,
+          "predictedScore": 4,
+          "error": -1
+        },
+        {
+          "id": "sample_issue_score4",
+          "trueScore": 4,
+          "predictedScore": 3,
+          "error": -1
+        },
+        {
+          "id": "sample_issue_score3",
+          "trueScore": 3,
+          "predictedScore": 4,
+          "error": 1
+        },
+        {
+          "id": "sample_issue_score2",
+          "trueScore": 2,
+          "predictedScore": 3,
+          "error": 1
+        }
+      ]
+    },
+    "official": {
+      "n": 6,
+      "bias": -0.167,
+      "meanAbsoluteError": 0.833,
+      "agreementWithinHalf": 0.167,
+      "agreementWithinOne": 1,
+      "exactAgreement": 0.167,
+      "quadraticWeightedKappa": 0.815,
+      "meanSampleSpread": 0,
+      "worstMisses": [
+        {
+          "id": "sample_issue_score6",
+          "trueScore": 6,
+          "predictedScore": 5,
+          "error": -1
+        },
+        {
+          "id": "sample_issue_score5",
+          "trueScore": 5,
+          "predictedScore": 4,
+          "error": -1
+        },
+        {
+          "id": "sample_issue_score4",
+          "trueScore": 4,
+          "predictedScore": 3,
+          "error": -1
+        },
+        {
+          "id": "sample_issue_score3",
+          "trueScore": 3,
+          "predictedScore": 4,
+          "error": 1
+        },
+        {
+          "id": "sample_issue_score2",
+          "trueScore": 2,
+          "predictedScore": 3,
+          "error": 1
+        }
+      ]
+    },
+    "teacher": {
+      "n": 0,
+      "bias": 0,
+      "meanAbsoluteError": 0,
+      "agreementWithinHalf": 0,
+      "agreementWithinOne": 0,
+      "exactAgreement": 0,
+      "quadraticWeightedKappa": 0,
+      "meanSampleSpread": 0,
+      "worstMisses": []
+    }
+  },
+  "ladders": [
+    {
+      "name": "sample_issue",
+      "correctlyOrdered": false,
+      "pairwiseAccuracy": 0.867,
+      "scores": [
+        {
+          "trueScore": 1,
+          "predictedScore": 1
+        },
+        {
+          "trueScore": 2,
+          "predictedScore": 3
+        },
+        {
+          "trueScore": 3,
+          "predictedScore": 4
+        },
+        {
+          "trueScore": 4,
+          "predictedScore": 3
+        },
+        {
+          "trueScore": 5,
+          "predictedScore": 4
+        },
+        {
+          "trueScore": 6,
+          "predictedScore": 5
+        }
+      ]
+    }
+  ],
+  "usage": {
+    "input": 6427,
+    "cached": 25819,
+    "output": 42512,
+    "cacheHitRate": 0.8006884574830987
+  },
+  "predictions": [
+    {
+      "id": "sample_issue_score6",
+      "trueScore": 6,
+      "predictedScore": 5,
+      "labelSource": "ets_official",
+      "samples": [
+        5
+      ]
+    },
+    {
+      "id": "sample_issue_score5",
+      "trueScore": 5,
+      "predictedScore": 4,
+      "labelSource": "ets_official",
+      "samples": [
+        4
+      ]
+    },
+    {
+      "id": "sample_issue_score4",
+      "trueScore": 4,
+      "predictedScore": 3,
+      "labelSource": "ets_official",
+      "samples": [
+        3
+      ]
+    },
+    {
+      "id": "sample_issue_score3",
+      "trueScore": 3,
+      "predictedScore": 4,
+      "labelSource": "ets_official",
+      "samples": [
+        4
+      ]
+    },
+    {
+      "id": "sample_issue_score2",
+      "trueScore": 2,
+      "predictedScore": 3,
+      "labelSource": "ets_official",
+      "samples": [
+        3
+      ]
+    },
+    {
+      "id": "sample_issue_score1",
+      "trueScore": 1,
+      "predictedScore": 1,
+      "labelSource": "ets_official",
+      "samples": [
+        1
+      ]
+    }
+  ],
+  "failures": []
+}

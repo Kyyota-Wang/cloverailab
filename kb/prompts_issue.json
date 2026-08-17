@@ -1,0 +1,1911 @@
+{
+  "source": "ETS Pool of Analytical Writing Topics (analytical-writing-pool.pdf)",
+  "task": "issue",
+  "count": 158,
+  "variant_counts": {
+    "recommendation": 23,
+    "statement": 53,
+    "claim_challenge": 26,
+    "policy": 11,
+    "claim_and_reason": 25,
+    "two_views": 20
+  },
+  "topics": [
+    {
+      "id": "issue_de5d023168",
+      "statement": "Governments should place few, if any, restrictions on scientific research and development.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the recommendation and explain your reasoning for the position you take. In developing and supporting your position, describe specific circumstances in which adopting the recommendation would or would not be advantageous and explain how these examples shape your position.",
+      "variant": "recommendation",
+      "variant_summary": "Agree/disagree with a recommendation, argued through specific circumstances.",
+      "required_moves": [
+        "State a position on the recommendation.",
+        "Describe specific circumstances where adopting it would be advantageous.",
+        "Describe specific circumstances where it would not be, and explain how both shape the position."
+      ]
+    },
+    {
+      "id": "issue_f9b44bfa3a",
+      "statement": "The best way to teach is to praise positive actions and ignore negative ones.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the statement and explain your reasoning for the position you take. In developing and supporting your position, you should consider ways in which the statement might or might not hold true and explain how these considerations shape your position.",
+      "variant": "statement",
+      "variant_summary": "Agree/disagree with a statement, qualified by when it does and does not hold.",
+      "required_moves": [
+        "State a position on the statement.",
+        "Consider ways the statement might hold true.",
+        "Consider ways it might not, and explain how those considerations shape the position."
+      ]
+    },
+    {
+      "id": "issue_34e411dcca",
+      "statement": "Governments should offer college and university education free of charge to all students.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the recommendation and explain your reasoning for the position you take. In developing and supporting your position, describe specific circumstances in which adopting the recommendation would or would not be advantageous and explain how these examples shape your position.",
+      "variant": "recommendation",
+      "variant_summary": "Agree/disagree with a recommendation, argued through specific circumstances.",
+      "required_moves": [
+        "State a position on the recommendation.",
+        "Describe specific circumstances where adopting it would be advantageous.",
+        "Describe specific circumstances where it would not be, and explain how both shape the position."
+      ]
+    },
+    {
+      "id": "issue_242ebfcc07",
+      "statement": "The luxuries and conveniences of contemporary life prevent people from developing into truly strong and independent individuals.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the statement and explain your reasoning for the position you take. In developing and supporting your position, you should consider ways in which the statement might or might not hold true and explain how these considerations shape your position.",
+      "variant": "statement",
+      "variant_summary": "Agree/disagree with a statement, qualified by when it does and does not hold.",
+      "required_moves": [
+        "State a position on the statement.",
+        "Consider ways the statement might hold true.",
+        "Consider ways it might not, and explain how those considerations shape the position."
+      ]
+    },
+    {
+      "id": "issue_ee5934e7cc",
+      "statement": "In any field of inquiry, the beginner is more likely than the expert to make important contributions.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the statement and explain your reasoning for the position you take. In developing and supporting your position, you should consider ways in which the statement might or might not hold true and explain how these considerations shape your position.",
+      "variant": "statement",
+      "variant_summary": "Agree/disagree with a statement, qualified by when it does and does not hold.",
+      "required_moves": [
+        "State a position on the statement.",
+        "Consider ways the statement might hold true.",
+        "Consider ways it might not, and explain how those considerations shape the position."
+      ]
+    },
+    {
+      "id": "issue_1e9c64c8b0",
+      "statement": "The surest indicator of a great nation is represented not by the achievements of its rulers, artists, or scientists, but by the general welfare of its people.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the statement and explain your reasoning for the position you take. In developing and supporting your position, you should consider ways in which the statement might or might not hold true and explain how these considerations shape your position.",
+      "variant": "statement",
+      "variant_summary": "Agree/disagree with a statement, qualified by when it does and does not hold.",
+      "required_moves": [
+        "State a position on the statement.",
+        "Consider ways the statement might hold true.",
+        "Consider ways it might not, and explain how those considerations shape the position."
+      ]
+    },
+    {
+      "id": "issue_26d5e59972",
+      "statement": "The best way to teach -- whether as an educator, employer, or parent -- is to praise positive actions and ignore negative ones.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the claim. In developing and supporting your position, be sure to address the most compelling reasons and/or examples that could be used to challenge your position.",
+      "variant": "claim_challenge",
+      "variant_summary": "Agree/disagree with the claim, and confront the strongest case against you.",
+      "required_moves": [
+        "State a position on the claim.",
+        "Raise the most compelling reasons or examples that could challenge that position.",
+        "Answer those challenges rather than merely acknowledging them."
+      ]
+    },
+    {
+      "id": "issue_4621d0f421",
+      "statement": "Teachers' salaries should be based on their students' academic performance.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the claim. In developing and supporting your position, be sure to address the most compelling reasons and/or examples that could be used to challenge your position.",
+      "variant": "claim_challenge",
+      "variant_summary": "Agree/disagree with the claim, and confront the strongest case against you.",
+      "required_moves": [
+        "State a position on the claim.",
+        "Raise the most compelling reasons or examples that could challenge that position.",
+        "Answer those challenges rather than merely acknowledging them."
+      ]
+    },
+    {
+      "id": "issue_f1d56c7583",
+      "statement": "Society should make efforts to save endangered species only if the potential extinction of those species is the result of human activities.",
+      "instruction": "Write a response in which you discuss your views on the policy and explain your reasoning for the position you take. In developing and supporting your position, you should consider the possible consequences of implementing the policy and explain how these consequences shape your position.",
+      "variant": "policy",
+      "variant_summary": "Take a position on a policy, argued through its consequences.",
+      "required_moves": [
+        "State a position on the policy.",
+        "Consider the possible consequences of implementing it.",
+        "Explain how those consequences shape the position."
+      ]
+    },
+    {
+      "id": "issue_131c79e727",
+      "statement": "College students should base their choice of a field of study on the availability of jobs in that field.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the claim. In developing and supporting your position, be sure to address the most compelling reasons and/or examples that could be used to challenge your position.",
+      "variant": "claim_challenge",
+      "variant_summary": "Agree/disagree with the claim, and confront the strongest case against you.",
+      "required_moves": [
+        "State a position on the claim.",
+        "Raise the most compelling reasons or examples that could challenge that position.",
+        "Answer those challenges rather than merely acknowledging them."
+      ]
+    },
+    {
+      "id": "issue_cc177bccc5",
+      "statement": "As we acquire more knowledge, things do not become more comprehensible, but more complex and mysterious.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the statement and explain your reasoning for the position you take. In developing and supporting your position, you should consider ways in which the statement might or might not hold true and explain how these considerations shape your position.",
+      "variant": "statement",
+      "variant_summary": "Agree/disagree with a statement, qualified by when it does and does not hold.",
+      "required_moves": [
+        "State a position on the statement.",
+        "Consider ways the statement might hold true.",
+        "Consider ways it might not, and explain how those considerations shape the position."
+      ]
+    },
+    {
+      "id": "issue_66769d85e3",
+      "statement": "In any situation, progress requires discussion among people who have contrasting points of view.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the statement and explain your reasoning for the position you take. In developing and supporting your position, you should consider ways in which the statement might or might not hold true and explain how these considerations shape your position.",
+      "variant": "statement",
+      "variant_summary": "Agree/disagree with a statement, qualified by when it does and does not hold.",
+      "required_moves": [
+        "State a position on the statement.",
+        "Consider ways the statement might hold true.",
+        "Consider ways it might not, and explain how those considerations shape the position."
+      ]
+    },
+    {
+      "id": "issue_69a7bc9c12",
+      "statement": "Educational institutions should dissuade students from pursuing fields of study in which they are unlikely to succeed.",
+      "instruction": "Write a response in which you discuss your views on the policy and explain your reasoning for the position you take. In developing and supporting your position, you should consider the possible consequences of implementing the policy and explain how these consequences shape your position.",
+      "variant": "policy",
+      "variant_summary": "Take a position on a policy, argued through its consequences.",
+      "required_moves": [
+        "State a position on the policy.",
+        "Consider the possible consequences of implementing it.",
+        "Explain how those consequences shape the position."
+      ]
+    },
+    {
+      "id": "issue_c001d14429",
+      "statement": "Governments should not fund any scientific research whose consequences are unclear.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the recommendation and explain your reasoning for the position you take. In developing and supporting your position, describe specific circumstances in which adopting the recommendation would or would not be advantageous and explain how these examples shape your position.",
+      "variant": "recommendation",
+      "variant_summary": "Agree/disagree with a recommendation, argued through specific circumstances.",
+      "required_moves": [
+        "State a position on the recommendation.",
+        "Describe specific circumstances where adopting it would be advantageous.",
+        "Describe specific circumstances where it would not be, and explain how both shape the position."
+      ]
+    },
+    {
+      "id": "issue_611cdd8776",
+      "statement": "Society should identify those children who have special talents and provide training for them at an early age to develop their talents.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the recommendation and explain your reasoning for the position you take. In developing and supporting your position, describe specific circumstances in which adopting the recommendation would or would not be advantageous and explain how these examples shape your position.",
+      "variant": "recommendation",
+      "variant_summary": "Agree/disagree with a recommendation, argued through specific circumstances.",
+      "required_moves": [
+        "State a position on the recommendation.",
+        "Describe specific circumstances where adopting it would be advantageous.",
+        "Describe specific circumstances where it would not be, and explain how both shape the position."
+      ]
+    },
+    {
+      "id": "issue_5514a93c72",
+      "statement": "It is primarily through our identification with social groups that we define ourselves.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the statement and explain your reasoning for the position you take. In developing and supporting your position, you should consider ways in which the statement might or might not hold true and explain how these considerations shape your position.",
+      "variant": "statement",
+      "variant_summary": "Agree/disagree with a statement, qualified by when it does and does not hold.",
+      "required_moves": [
+        "State a position on the statement.",
+        "Consider ways the statement might hold true.",
+        "Consider ways it might not, and explain how those considerations shape the position."
+      ]
+    },
+    {
+      "id": "issue_5fc1946247",
+      "statement": "College students should be encouraged to pursue subjects that interest them rather than the courses that seem most likely to lead to jobs.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the recommendation and explain your reasoning for the position you take. In developing and supporting your position, describe specific circumstances in which adopting the recommendation would or would not be advantageous and explain how these examples shape your position.",
+      "variant": "recommendation",
+      "variant_summary": "Agree/disagree with a recommendation, argued through specific circumstances.",
+      "required_moves": [
+        "State a position on the recommendation.",
+        "Describe specific circumstances where adopting it would be advantageous.",
+        "Describe specific circumstances where it would not be, and explain how both shape the position."
+      ]
+    },
+    {
+      "id": "issue_6790a06df7",
+      "statement": "Claim: When planning courses, educators should take into account the interests and suggestions of their students. Reason: Students are more motivated to learn when they are interested in what they are studying.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the claim and the reason on which that claim is based.",
+      "variant": "claim_and_reason",
+      "variant_summary": "Agree/disagree with BOTH the claim and the reason offered for it.",
+      "required_moves": [
+        "State a position on the claim.",
+        "State a separate position on the reason -- a claim can be right for the wrong reason.",
+        "Address the logical link between reason and claim explicitly."
+      ]
+    },
+    {
+      "id": "issue_2d03c255c7",
+      "statement": "The greatness of individuals can be decided only by those who live after them, not by their contemporaries.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the statement and explain your reasoning for the position you take. In developing and supporting your position, you should consider ways in which the statement might or might not hold true and explain how these considerations shape your position.",
+      "variant": "statement",
+      "variant_summary": "Agree/disagree with a statement, qualified by when it does and does not hold.",
+      "required_moves": [
+        "State a position on the statement.",
+        "Consider ways the statement might hold true.",
+        "Consider ways it might not, and explain how those considerations shape the position."
+      ]
+    },
+    {
+      "id": "issue_5dbb1256c7",
+      "statement": "Students should always question what they are taught instead of accepting it passively.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the statement and explain your reasoning for the position you take. In developing and supporting your position, you should consider ways in which the statement might or might not hold true and explain how these considerations shape your position.",
+      "variant": "statement",
+      "variant_summary": "Agree/disagree with a statement, qualified by when it does and does not hold.",
+      "required_moves": [
+        "State a position on the statement.",
+        "Consider ways the statement might hold true.",
+        "Consider ways it might not, and explain how those considerations shape the position."
+      ]
+    },
+    {
+      "id": "issue_abc790341a",
+      "statement": "The increasingly rapid pace of life today causes more problems than it solves.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the statement and explain your reasoning for the position you take. In developing and supporting your position, you should consider ways in which the statement might or might not hold true and explain how these considerations shape your position.",
+      "variant": "statement",
+      "variant_summary": "Agree/disagree with a statement, qualified by when it does and does not hold.",
+      "required_moves": [
+        "State a position on the statement.",
+        "Consider ways the statement might hold true.",
+        "Consider ways it might not, and explain how those considerations shape the position."
+      ]
+    },
+    {
+      "id": "issue_14d5a9a178",
+      "statement": "Claim: It is no longer possible for a society to regard any living man or woman as a hero. Reason: The reputation of anyone who is subjected to media scrutiny will eventually be diminished.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the claim and the reason on which that claim is based.",
+      "variant": "claim_and_reason",
+      "variant_summary": "Agree/disagree with BOTH the claim and the reason offered for it.",
+      "required_moves": [
+        "State a position on the claim.",
+        "State a separate position on the reason -- a claim can be right for the wrong reason.",
+        "Address the logical link between reason and claim explicitly."
+      ]
+    },
+    {
+      "id": "issue_2b9cf0987b",
+      "statement": "Competition for high grades seriously limits the quality of learning at all levels of education.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the statement and explain your reasoning for the position you take. In developing and supporting your position, you should consider ways in which the statement might or might not hold true and explain how these considerations shape your position.",
+      "variant": "statement",
+      "variant_summary": "Agree/disagree with a statement, qualified by when it does and does not hold.",
+      "required_moves": [
+        "State a position on the statement.",
+        "Consider ways the statement might hold true.",
+        "Consider ways it might not, and explain how those considerations shape the position."
+      ]
+    },
+    {
+      "id": "issue_280f359b01",
+      "statement": "Universities should require every student to take a variety of courses outside the student's field of study.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the recommendation and explain your reasoning for the position you take. In developing and supporting your position, describe specific circumstances in which adopting the recommendation would or would not be advantageous and explain how these examples shape your position.",
+      "variant": "recommendation",
+      "variant_summary": "Agree/disagree with a recommendation, argued through specific circumstances.",
+      "required_moves": [
+        "State a position on the recommendation.",
+        "Describe specific circumstances where adopting it would be advantageous.",
+        "Describe specific circumstances where it would not be, and explain how both shape the position."
+      ]
+    },
+    {
+      "id": "issue_73f31d6c6a",
+      "statement": "Educators should find out what students want included in the curriculum and then offer it to them.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the recommendation and explain your reasoning for the position you take. In developing and supporting your position, describe specific circumstances in which adopting the recommendation would or would not be advantageous and explain how these examples shape your position.",
+      "variant": "recommendation",
+      "variant_summary": "Agree/disagree with a recommendation, argued through specific circumstances.",
+      "required_moves": [
+        "State a position on the recommendation.",
+        "Describe specific circumstances where adopting it would be advantageous.",
+        "Describe specific circumstances where it would not be, and explain how both shape the position."
+      ]
+    },
+    {
+      "id": "issue_82bd40cd63",
+      "statement": "Educators should teach facts only after their students have studied the ideas, trends, and concepts that help explain those facts.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the recommendation and explain your reasoning for the position you take. In developing and supporting your position, describe specific circumstances in which adopting the recommendation would or would not be advantageous and explain how these examples shape your position.",
+      "variant": "recommendation",
+      "variant_summary": "Agree/disagree with a recommendation, argued through specific circumstances.",
+      "required_moves": [
+        "State a position on the recommendation.",
+        "Describe specific circumstances where adopting it would be advantageous.",
+        "Describe specific circumstances where it would not be, and explain how both shape the position."
+      ]
+    },
+    {
+      "id": "issue_8cc48a903a",
+      "statement": "Claim: We can usually learn much more from people whose views we share than from those whose views contradict our own. Reason: Disagreement can cause stress and inhibit learning.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the claim and the reason on which that claim is based.",
+      "variant": "claim_and_reason",
+      "variant_summary": "Agree/disagree with BOTH the claim and the reason offered for it.",
+      "required_moves": [
+        "State a position on the claim.",
+        "State a separate position on the reason -- a claim can be right for the wrong reason.",
+        "Address the logical link between reason and claim explicitly."
+      ]
+    },
+    {
+      "id": "issue_0c23055643",
+      "statement": "Government officials should rely on their own judgment rather than unquestioningly carry out the will of the people they serve.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the recommendation and explain your reasoning for the position you take. In developing and supporting your position, describe specific circumstances in which adopting the recommendation would or would not be advantageous and explain how these examples shape your position.",
+      "variant": "recommendation",
+      "variant_summary": "Agree/disagree with a recommendation, argued through specific circumstances.",
+      "required_moves": [
+        "State a position on the recommendation.",
+        "Describe specific circumstances where adopting it would be advantageous.",
+        "Describe specific circumstances where it would not be, and explain how both shape the position."
+      ]
+    },
+    {
+      "id": "issue_921845821b",
+      "statement": "Young people should be encouraged to pursue long-term, realistic goals rather than seek immediate fame and recognition.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the recommendation and explain your reasoning for the position you take. In developing and supporting your position, describe specific circumstances in which adopting the recommendation would or would not be advantageous and explain how these examples shape your position.",
+      "variant": "recommendation",
+      "variant_summary": "Agree/disagree with a recommendation, argued through specific circumstances.",
+      "required_moves": [
+        "State a position on the recommendation.",
+        "Describe specific circumstances where adopting it would be advantageous.",
+        "Describe specific circumstances where it would not be, and explain how both shape the position."
+      ]
+    },
+    {
+      "id": "issue_4778371bfd",
+      "statement": "The best way to teach is to praise positive actions and ignore negative ones.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the recommendation and explain your reasoning for the position you take. In developing and supporting your position, describe specific circumstances in which adopting the recommendation would or would not be advantageous and explain how these examples shape your position.",
+      "variant": "recommendation",
+      "variant_summary": "Agree/disagree with a recommendation, argued through specific circumstances.",
+      "required_moves": [
+        "State a position on the recommendation.",
+        "Describe specific circumstances where adopting it would be advantageous.",
+        "Describe specific circumstances where it would not be, and explain how both shape the position."
+      ]
+    },
+    {
+      "id": "issue_627b8724a7",
+      "statement": "If a goal is worthy, then any means taken to attain it are justifiable.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the statement and explain your reasoning for the position you take. In developing and supporting your position, you should consider ways in which the statement might or might not hold true and explain how these considerations shape your position.",
+      "variant": "statement",
+      "variant_summary": "Agree/disagree with a statement, qualified by when it does and does not hold.",
+      "required_moves": [
+        "State a position on the statement.",
+        "Consider ways the statement might hold true.",
+        "Consider ways it might not, and explain how those considerations shape the position."
+      ]
+    },
+    {
+      "id": "issue_896355dd10",
+      "statement": "In order to become well-rounded individuals, all college students should be required to take courses in which they read poetry, novels, mythology, and other types of imaginative literature.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the recommendation and explain your reasoning for the position you take. In developing and supporting your position, describe specific circumstances in which adopting the recommendation would or would not be advantageous and explain how these examples shape your position.",
+      "variant": "recommendation",
+      "variant_summary": "Agree/disagree with a recommendation, argued through specific circumstances.",
+      "required_moves": [
+        "State a position on the recommendation.",
+        "Describe specific circumstances where adopting it would be advantageous.",
+        "Describe specific circumstances where it would not be, and explain how both shape the position."
+      ]
+    },
+    {
+      "id": "issue_4f5df25e82",
+      "statement": "In order for any work of art -- for example, a film, a novel, a poem, or a song -- to have merit, it must be understandable to most people.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the statement and explain your reasoning for the position you take. In developing and supporting your position, you should consider ways in which the statement might or might not hold true and explain how these considerations shape your position.",
+      "variant": "statement",
+      "variant_summary": "Agree/disagree with a statement, qualified by when it does and does not hold.",
+      "required_moves": [
+        "State a position on the statement.",
+        "Consider ways the statement might hold true.",
+        "Consider ways it might not, and explain how those considerations shape the position."
+      ]
+    },
+    {
+      "id": "issue_b443fd1764",
+      "statement": "Many important discoveries or creations are accidental: it is usually while seeking the answer to one question that we come across the answer to another.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the statement and explain your reasoning for the position you take. In developing and supporting your position, you should consider ways in which the statement might or might not hold true and explain how these considerations shape your position.",
+      "variant": "statement",
+      "variant_summary": "Agree/disagree with a statement, qualified by when it does and does not hold.",
+      "required_moves": [
+        "State a position on the statement.",
+        "Consider ways the statement might hold true.",
+        "Consider ways it might not, and explain how those considerations shape the position."
+      ]
+    },
+    {
+      "id": "issue_bf54321ae3",
+      "statement": "The main benefit of the study of history is to dispel the illusion that people living now are significantly different from people who lived in earlier times.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the statement and explain your reasoning for the position you take. In developing and supporting your position, you should consider ways in which the statement might or might not hold true and explain how these considerations shape your position.",
+      "variant": "statement",
+      "variant_summary": "Agree/disagree with a statement, qualified by when it does and does not hold.",
+      "required_moves": [
+        "State a position on the statement.",
+        "Consider ways the statement might hold true.",
+        "Consider ways it might not, and explain how those considerations shape the position."
+      ]
+    },
+    {
+      "id": "issue_f7bdabdab3",
+      "statement": "Learning is primarily a matter of personal discipline; students cannot be motivated by school or college alone.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the statement and explain your reasoning for the position you take. In developing and supporting your position, you should consider ways in which the statement might or might not hold true and explain how these considerations shape your position.",
+      "variant": "statement",
+      "variant_summary": "Agree/disagree with a statement, qualified by when it does and does not hold.",
+      "required_moves": [
+        "State a position on the statement.",
+        "Consider ways the statement might hold true.",
+        "Consider ways it might not, and explain how those considerations shape the position."
+      ]
+    },
+    {
+      "id": "issue_1a8629842c",
+      "statement": "Scientists and other researchers should focus their research on areas that are likely to benefit the greatest number of people.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the recommendation and explain your reasoning for the position you take. In developing and supporting your position, describe specific circumstances in which adopting the recommendation would or would not be advantageous and explain how these examples shape your position.",
+      "variant": "recommendation",
+      "variant_summary": "Agree/disagree with a recommendation, argued through specific circumstances.",
+      "required_moves": [
+        "State a position on the recommendation.",
+        "Describe specific circumstances where adopting it would be advantageous.",
+        "Describe specific circumstances where it would not be, and explain how both shape the position."
+      ]
+    },
+    {
+      "id": "issue_c7499da980",
+      "statement": "Politicians should pursue common ground and reasonable consensus rather than elusive ideals.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the recommendation and explain your reasoning for the position you take. In developing and supporting your position, describe specific circumstances in which adopting the recommendation would or would not be advantageous and explain how these examples shape your position.",
+      "variant": "recommendation",
+      "variant_summary": "Agree/disagree with a recommendation, argued through specific circumstances.",
+      "required_moves": [
+        "State a position on the recommendation.",
+        "Describe specific circumstances where adopting it would be advantageous.",
+        "Describe specific circumstances where it would not be, and explain how both shape the position."
+      ]
+    },
+    {
+      "id": "issue_f6751352bc",
+      "statement": "People should undertake risky action only after they have carefully considered its consequences.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the recommendation and explain your reasoning for the position you take. In developing and supporting your position, describe specific circumstances in which adopting the recommendation would or would not be advantageous and explain how these examples shape your position.",
+      "variant": "recommendation",
+      "variant_summary": "Agree/disagree with a recommendation, argued through specific circumstances.",
+      "required_moves": [
+        "State a position on the recommendation.",
+        "Describe specific circumstances where adopting it would be advantageous.",
+        "Describe specific circumstances where it would not be, and explain how both shape the position."
+      ]
+    },
+    {
+      "id": "issue_be93510f97",
+      "statement": "Leaders are created by the demands that are placed on them.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the statement and explain your reasoning for the position you take. In developing and supporting your position, you should consider ways in which the statement might or might not hold true and explain how these considerations shape your position.",
+      "variant": "statement",
+      "variant_summary": "Agree/disagree with a statement, qualified by when it does and does not hold.",
+      "required_moves": [
+        "State a position on the statement.",
+        "Consider ways the statement might hold true.",
+        "Consider ways it might not, and explain how those considerations shape the position."
+      ]
+    },
+    {
+      "id": "issue_f598ed9f9c",
+      "statement": "There is little justification for society to make extraordinary efforts -- especially at a great cost in money and jobs -- to save endangered animal or plant species.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the statement and explain your reasoning for the position you take. In developing and supporting your position, you should consider ways in which the statement might or might not hold true and explain how these considerations shape your position.",
+      "variant": "statement",
+      "variant_summary": "Agree/disagree with a statement, qualified by when it does and does not hold.",
+      "required_moves": [
+        "State a position on the statement.",
+        "Consider ways the statement might hold true.",
+        "Consider ways it might not, and explain how those considerations shape the position."
+      ]
+    },
+    {
+      "id": "issue_6af8f1b5dc",
+      "statement": "The human mind will always be superior to machines because machines are only tools of human minds.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the statement and explain your reasoning for the position you take. In developing and supporting your position, you should consider ways in which the statement might or might not hold true and explain how these considerations shape your position.",
+      "variant": "statement",
+      "variant_summary": "Agree/disagree with a statement, qualified by when it does and does not hold.",
+      "required_moves": [
+        "State a position on the statement.",
+        "Consider ways the statement might hold true.",
+        "Consider ways it might not, and explain how those considerations shape the position."
+      ]
+    },
+    {
+      "id": "issue_ae7b61e7a0",
+      "statement": "People who are the most deeply committed to an idea or policy are also the most critical of it.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the statement and explain your reasoning for the position you take. In developing and supporting your position, you should consider ways in which the statement might or might not hold true and explain how these considerations shape your position.",
+      "variant": "statement",
+      "variant_summary": "Agree/disagree with a statement, qualified by when it does and does not hold.",
+      "required_moves": [
+        "State a position on the statement.",
+        "Consider ways the statement might hold true.",
+        "Consider ways it might not, and explain how those considerations shape the position."
+      ]
+    },
+    {
+      "id": "issue_e308789f01",
+      "statement": "Some people believe that society should try to save every plant and animal species, despite the expense to humans in effort, time, and financial well-being. Others believe that society need not make extraordinary efforts, especially at a great cost in money and jobs, to save endangered species.",
+      "instruction": "Write a response in which you discuss which view more closely aligns with your own position and explain your reasoning for the position you take. In developing and supporting your position, you should address both of the views presented.",
+      "variant": "two_views",
+      "variant_summary": "Choose between two opposing views and defend the choice.",
+      "required_moves": [
+        "Say which of the two views is closer to your own position.",
+        "Address BOTH views -- ignoring the rejected view is the standard failure here.",
+        "Explain the reasoning behind the choice."
+      ]
+    },
+    {
+      "id": "issue_a91394d33f",
+      "statement": "Some people believe that the purpose of education is to free the mind and the spirit. Others believe that formal education tends to restrain our minds and spirits rather than set them free.",
+      "instruction": "Write a response in which you discuss which view more closely aligns with your own position and explain your reasoning for the position you take. In developing and supporting your position, you should address both of the views presented.",
+      "variant": "two_views",
+      "variant_summary": "Choose between two opposing views and defend the choice.",
+      "required_moves": [
+        "Say which of the two views is closer to your own position.",
+        "Address BOTH views -- ignoring the rejected view is the standard failure here.",
+        "Explain the reasoning behind the choice."
+      ]
+    },
+    {
+      "id": "issue_f3536f519d",
+      "statement": "Some people believe it is often necessary, even desirable, for political leaders to withhold information from the public. Others believe that the public has a right to be fully informed.",
+      "instruction": "Write a response in which you discuss which view more closely aligns with your own position and explain your reasoning for the position you take. In developing and supporting your position, you should address both of the views presented.",
+      "variant": "two_views",
+      "variant_summary": "Choose between two opposing views and defend the choice.",
+      "required_moves": [
+        "Say which of the two views is closer to your own position.",
+        "Address BOTH views -- ignoring the rejected view is the standard failure here.",
+        "Explain the reasoning behind the choice."
+      ]
+    },
+    {
+      "id": "issue_c639481a87",
+      "statement": "Claim: Universities should require every student to take a variety of courses outside the student's major field of study. Reason: Acquiring knowledge of various academic disciplines is the best way to become truly educated.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the claim and the reason on which that claim is based.",
+      "variant": "claim_and_reason",
+      "variant_summary": "Agree/disagree with BOTH the claim and the reason offered for it.",
+      "required_moves": [
+        "State a position on the claim.",
+        "State a separate position on the reason -- a claim can be right for the wrong reason.",
+        "Address the logical link between reason and claim explicitly."
+      ]
+    },
+    {
+      "id": "issue_b4487e6ced",
+      "statement": "Young people should be encouraged to pursue long-term, realistic goals rather than seek immediate fame and recognition.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the statement and explain your reasoning for the position you take. In developing and supporting your position, you should consider ways in which the statement might or might not hold true and explain how these considerations shape your position.",
+      "variant": "statement",
+      "variant_summary": "Agree/disagree with a statement, qualified by when it does and does not hold.",
+      "required_moves": [
+        "State a position on the statement.",
+        "Consider ways the statement might hold true.",
+        "Consider ways it might not, and explain how those considerations shape the position."
+      ]
+    },
+    {
+      "id": "issue_fe0d62ef37",
+      "statement": "Governments should not fund any scientific research whose consequences are unclear.",
+      "instruction": "Write a response in which you discuss your views on the policy and explain your reasoning for the position you take. In developing and supporting your position, you should consider the possible consequences of implementing the policy and explain how these consequences shape your position.",
+      "variant": "policy",
+      "variant_summary": "Take a position on a policy, argued through its consequences.",
+      "required_moves": [
+        "State a position on the policy.",
+        "Consider the possible consequences of implementing it.",
+        "Explain how those consequences shape the position."
+      ]
+    },
+    {
+      "id": "issue_7217f2d87d",
+      "statement": "Knowing about the past cannot help people to make important decisions today.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the statement and explain your reasoning for the position you take. In developing and supporting your position, you should consider ways in which the statement might or might not hold true and explain how these considerations shape your position.",
+      "variant": "statement",
+      "variant_summary": "Agree/disagree with a statement, qualified by when it does and does not hold.",
+      "required_moves": [
+        "State a position on the statement.",
+        "Consider ways the statement might hold true.",
+        "Consider ways it might not, and explain how those considerations shape the position."
+      ]
+    },
+    {
+      "id": "issue_92692577fa",
+      "statement": "In this age of intensive media coverage, it is no longer possible for a society to regard any living man or woman as a hero.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the statement and explain your reasoning for the position you take. In developing and supporting your position, you should consider ways in which the statement might or might not hold true and explain how these considerations shape your position.",
+      "variant": "statement",
+      "variant_summary": "Agree/disagree with a statement, qualified by when it does and does not hold.",
+      "required_moves": [
+        "State a position on the statement.",
+        "Consider ways the statement might hold true.",
+        "Consider ways it might not, and explain how those considerations shape the position."
+      ]
+    },
+    {
+      "id": "issue_bef2d5551a",
+      "statement": "We can usually learn much more from people whose views we share than from people whose views contradict our own.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the statement and explain your reasoning for the position you take. In developing and supporting your position, you should consider ways in which the statement might or might not hold true and explain how these considerations shape your position.",
+      "variant": "statement",
+      "variant_summary": "Agree/disagree with a statement, qualified by when it does and does not hold.",
+      "required_moves": [
+        "State a position on the statement.",
+        "Consider ways the statement might hold true.",
+        "Consider ways it might not, and explain how those considerations shape the position."
+      ]
+    },
+    {
+      "id": "issue_bf27be4d94",
+      "statement": "The most effective way to understand contemporary culture is to analyze the trends of its youth.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the statement and explain your reasoning for the position you take. In developing and supporting your position, you should consider ways in which the statement might or might not hold true and explain how these considerations shape your position.",
+      "variant": "statement",
+      "variant_summary": "Agree/disagree with a statement, qualified by when it does and does not hold.",
+      "required_moves": [
+        "State a position on the statement.",
+        "Consider ways the statement might hold true.",
+        "Consider ways it might not, and explain how those considerations shape the position."
+      ]
+    },
+    {
+      "id": "issue_a4541dc17b",
+      "statement": "People's attitudes are determined more by their immediate situation or surroundings than by society as a whole.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the statement and explain your reasoning for the position you take. In developing and supporting your position, you should consider ways in which the statement might or might not hold true and explain how these considerations shape your position.",
+      "variant": "statement",
+      "variant_summary": "Agree/disagree with a statement, qualified by when it does and does not hold.",
+      "required_moves": [
+        "State a position on the statement.",
+        "Consider ways the statement might hold true.",
+        "Consider ways it might not, and explain how those considerations shape the position."
+      ]
+    },
+    {
+      "id": "issue_3649e4bcef",
+      "statement": "Nations should suspend government funding for the arts when significant numbers of their citizens are hungry or unemployed.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the recommendation and explain your reasoning for the position you take. In developing and supporting your position, describe specific circumstances in which adopting the recommendation would or would not be advantageous and explain how these examples shape your position.",
+      "variant": "recommendation",
+      "variant_summary": "Agree/disagree with a recommendation, argued through specific circumstances.",
+      "required_moves": [
+        "State a position on the recommendation.",
+        "Describe specific circumstances where adopting it would be advantageous.",
+        "Describe specific circumstances where it would not be, and explain how both shape the position."
+      ]
+    },
+    {
+      "id": "issue_c641d040f2",
+      "statement": "All parents should be required to volunteer time to their children's schools.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the recommendation and explain your reasoning for the position you take. In developing and supporting your position, describe specific circumstances in which adopting the recommendation would or would not be advantageous and explain how these examples shape your position.",
+      "variant": "recommendation",
+      "variant_summary": "Agree/disagree with a recommendation, argued through specific circumstances.",
+      "required_moves": [
+        "State a position on the recommendation.",
+        "Describe specific circumstances where adopting it would be advantageous.",
+        "Describe specific circumstances where it would not be, and explain how both shape the position."
+      ]
+    },
+    {
+      "id": "issue_9d22546c37",
+      "statement": "Colleges and universities should require their students to spend at least one semester studying in a foreign country.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the recommendation and explain your reasoning for the position you take. In developing and supporting your position, describe specific circumstances in which adopting the recommendation would or would not be advantageous and explain how these examples shape your position.",
+      "variant": "recommendation",
+      "variant_summary": "Agree/disagree with a recommendation, argued through specific circumstances.",
+      "required_moves": [
+        "State a position on the recommendation.",
+        "Describe specific circumstances where adopting it would be advantageous.",
+        "Describe specific circumstances where it would not be, and explain how both shape the position."
+      ]
+    },
+    {
+      "id": "issue_4d933089a0",
+      "statement": "Teachers' salaries should be based on the academic performance of their students.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the recommendation and explain your reasoning for the position you take. In developing and supporting your position, describe specific circumstances in which adopting the recommendation would or would not be advantageous and explain how these examples shape your position.",
+      "variant": "recommendation",
+      "variant_summary": "Agree/disagree with a recommendation, argued through specific circumstances.",
+      "required_moves": [
+        "State a position on the recommendation.",
+        "Describe specific circumstances where adopting it would be advantageous.",
+        "Describe specific circumstances where it would not be, and explain how both shape the position."
+      ]
+    },
+    {
+      "id": "issue_9dcc0200a7",
+      "statement": "It is no longer possible for a society to regard any living man or woman as a hero.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the claim. In developing and supporting your position, be sure to address the most compelling reasons and/or examples that could be used to challenge your position.",
+      "variant": "claim_challenge",
+      "variant_summary": "Agree/disagree with the claim, and confront the strongest case against you.",
+      "required_moves": [
+        "State a position on the claim.",
+        "Raise the most compelling reasons or examples that could challenge that position.",
+        "Answer those challenges rather than merely acknowledging them."
+      ]
+    },
+    {
+      "id": "issue_f328768975",
+      "statement": "Some people believe that in order to thrive, a society must put its own overall success before the well-being of its individual citizens. Others believe that the well- being of a society can only be measured by the general welfare of all its people.",
+      "instruction": "Write a response in which you discuss which view more closely aligns with your own position and explain your reasoning for the position you take. In developing and supporting your position, you should address both of the views presented.",
+      "variant": "two_views",
+      "variant_summary": "Choose between two opposing views and defend the choice.",
+      "required_moves": [
+        "Say which of the two views is closer to your own position.",
+        "Address BOTH views -- ignoring the rejected view is the standard failure here.",
+        "Explain the reasoning behind the choice."
+      ]
+    },
+    {
+      "id": "issue_87ed44b3c5",
+      "statement": "Claim: Any piece of information referred to as a fact should be mistrusted, since it may well be proven false in the future. Reason: Much of the information that people assume is factual actually turns out to be inaccurate.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the claim and the reason on which that claim is based.",
+      "variant": "claim_and_reason",
+      "variant_summary": "Agree/disagree with BOTH the claim and the reason offered for it.",
+      "required_moves": [
+        "State a position on the claim.",
+        "State a separate position on the reason -- a claim can be right for the wrong reason.",
+        "Address the logical link between reason and claim explicitly."
+      ]
+    },
+    {
+      "id": "issue_452717b329",
+      "statement": "Claim: Nations should suspend government funding for the arts when significant numbers of their citizens are hungry or unemployed. Reason: It is inappropriate -- and, perhaps, even cruel -- to use public resources to fund the arts when people's basic needs are not being met.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the claim and the reason on which that claim is based.",
+      "variant": "claim_and_reason",
+      "variant_summary": "Agree/disagree with BOTH the claim and the reason offered for it.",
+      "required_moves": [
+        "State a position on the claim.",
+        "State a separate position on the reason -- a claim can be right for the wrong reason.",
+        "Address the logical link between reason and claim explicitly."
+      ]
+    },
+    {
+      "id": "issue_12d669aa4c",
+      "statement": "Claim: Many problems of modern society cannot be solved by laws and the legal system. Reason: Laws cannot change what is in people's hearts or minds.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the claim and the reason on which that claim is based.",
+      "variant": "claim_and_reason",
+      "variant_summary": "Agree/disagree with BOTH the claim and the reason offered for it.",
+      "required_moves": [
+        "State a position on the claim.",
+        "State a separate position on the reason -- a claim can be right for the wrong reason.",
+        "Address the logical link between reason and claim explicitly."
+      ]
+    },
+    {
+      "id": "issue_1851adf947",
+      "statement": "Educators should take students' interests into account when planning the content of the courses they teach.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the recommendation and explain your reasoning for the position you take. In developing and supporting your position, describe specific circumstances in which adopting the recommendation would or would not be advantageous and explain how these examples shape your position.",
+      "variant": "recommendation",
+      "variant_summary": "Agree/disagree with a recommendation, argued through specific circumstances.",
+      "required_moves": [
+        "State a position on the recommendation.",
+        "Describe specific circumstances where adopting it would be advantageous.",
+        "Describe specific circumstances where it would not be, and explain how both shape the position."
+      ]
+    },
+    {
+      "id": "issue_13346b8775",
+      "statement": "The primary goal of technological advancement should be to increase people's efficiency so that they have more leisure time.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the statement and explain your reasoning for the position you take. In developing and supporting your position, you should consider ways in which the statement might or might not hold true and explain how these considerations shape your position.",
+      "variant": "statement",
+      "variant_summary": "Agree/disagree with a statement, qualified by when it does and does not hold.",
+      "required_moves": [
+        "State a position on the statement.",
+        "Consider ways the statement might hold true.",
+        "Consider ways it might not, and explain how those considerations shape the position."
+      ]
+    },
+    {
+      "id": "issue_0856eb6f24",
+      "statement": "Educators should base their assessment of students' learning not on students' grasp of facts but on the ability to explain the ideas, trends, and concepts that those facts illustrate.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the recommendation and explain your reasoning for the position you take. In developing and supporting your position, describe specific circumstances in which adopting the recommendation would or would not be advantageous and explain how these examples shape your position.",
+      "variant": "recommendation",
+      "variant_summary": "Agree/disagree with a recommendation, argued through specific circumstances.",
+      "required_moves": [
+        "State a position on the recommendation.",
+        "Describe specific circumstances where adopting it would be advantageous.",
+        "Describe specific circumstances where it would not be, and explain how both shape the position."
+      ]
+    },
+    {
+      "id": "issue_47e44e0d30",
+      "statement": "Unfortunately, in contemporary society, creating an appealing image has become more important than the reality or truth behind that image.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the statement and explain your reasoning for the position you take. In developing and supporting your position, you should consider ways in which the statement might or might not hold true and explain how these considerations shape your position.",
+      "variant": "statement",
+      "variant_summary": "Agree/disagree with a statement, qualified by when it does and does not hold.",
+      "required_moves": [
+        "State a position on the statement.",
+        "Consider ways the statement might hold true.",
+        "Consider ways it might not, and explain how those considerations shape the position."
+      ]
+    },
+    {
+      "id": "issue_67f94f069c",
+      "statement": "The effectiveness of a country's leaders is best measured by examining the well- being of that country's citizens.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the claim. In developing and supporting your position, be sure to address the most compelling reasons and/or examples that could be used to challenge your position.",
+      "variant": "claim_challenge",
+      "variant_summary": "Agree/disagree with the claim, and confront the strongest case against you.",
+      "required_moves": [
+        "State a position on the claim.",
+        "Raise the most compelling reasons or examples that could challenge that position.",
+        "Answer those challenges rather than merely acknowledging them."
+      ]
+    },
+    {
+      "id": "issue_3b0760bfe8",
+      "statement": "All parents should be required to volunteer time to their children's schools.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the claim. In developing and supporting your position, be sure to address the most compelling reasons and/or examples that could be used to challenge your position.",
+      "variant": "claim_challenge",
+      "variant_summary": "Agree/disagree with the claim, and confront the strongest case against you.",
+      "required_moves": [
+        "State a position on the claim.",
+        "Raise the most compelling reasons or examples that could challenge that position.",
+        "Answer those challenges rather than merely acknowledging them."
+      ]
+    },
+    {
+      "id": "issue_495a41d74c",
+      "statement": "A nation should require all of its students to study the same national curriculum until they enter college.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the claim. In developing and supporting your position, be sure to address the most compelling reasons and/or examples that could be used to challenge your position.",
+      "variant": "claim_challenge",
+      "variant_summary": "Agree/disagree with the claim, and confront the strongest case against you.",
+      "required_moves": [
+        "State a position on the claim.",
+        "Raise the most compelling reasons or examples that could challenge that position.",
+        "Answer those challenges rather than merely acknowledging them."
+      ]
+    },
+    {
+      "id": "issue_c45f20c4d6",
+      "statement": "Colleges and universities should require their students to spend at least one semester studying in a foreign country.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the claim. In developing and supporting your position, be sure to address the most compelling reasons and/or examples that could be used to challenge your position.",
+      "variant": "claim_challenge",
+      "variant_summary": "Agree/disagree with the claim, and confront the strongest case against you.",
+      "required_moves": [
+        "State a position on the claim.",
+        "Raise the most compelling reasons or examples that could challenge that position.",
+        "Answer those challenges rather than merely acknowledging them."
+      ]
+    },
+    {
+      "id": "issue_c320a4e7df",
+      "statement": "Educational institutions should actively encourage their students to choose fields of study in which jobs are plentiful.",
+      "instruction": "Write a response in which you discuss your views on the policy and explain your reasoning for the position you take. In developing and supporting your position, you should consider the possible consequences of implementing the policy and explain how these consequences shape your position.",
+      "variant": "policy",
+      "variant_summary": "Take a position on a policy, argued through its consequences.",
+      "required_moves": [
+        "State a position on the policy.",
+        "Consider the possible consequences of implementing it.",
+        "Explain how those consequences shape the position."
+      ]
+    },
+    {
+      "id": "issue_9b4b2c2152",
+      "statement": "People's behavior is largely determined by forces not of their own making.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the claim. In developing and supporting your position, be sure to address the most compelling reasons and/or examples that could be used to challenge your position.",
+      "variant": "claim_challenge",
+      "variant_summary": "Agree/disagree with the claim, and confront the strongest case against you.",
+      "required_moves": [
+        "State a position on the claim.",
+        "Raise the most compelling reasons or examples that could challenge that position.",
+        "Answer those challenges rather than merely acknowledging them."
+      ]
+    },
+    {
+      "id": "issue_5ca1c95266",
+      "statement": "Colleges and universities should require their students to spend at least one semester studying in a foreign country.",
+      "instruction": "Write a response in which you discuss your views on the policy and explain your reasoning for the position you take. In developing and supporting your position, you should consider the possible consequences of implementing the policy and explain how these consequences shape your position.",
+      "variant": "policy",
+      "variant_summary": "Take a position on a policy, argued through its consequences.",
+      "required_moves": [
+        "State a position on the policy.",
+        "Consider the possible consequences of implementing it.",
+        "Explain how those consequences shape the position."
+      ]
+    },
+    {
+      "id": "issue_b567236401",
+      "statement": "Although innovations such as video, computers, and the Internet seem to offer schools improved methods for instructing students, these technologies all too often distract from real learning.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the statement and explain your reasoning for the position you take. In developing and supporting your position, you should consider ways in which the statement might or might not hold true and explain how these considerations shape your position.",
+      "variant": "statement",
+      "variant_summary": "Agree/disagree with a statement, qualified by when it does and does not hold.",
+      "required_moves": [
+        "State a position on the statement.",
+        "Consider ways the statement might hold true.",
+        "Consider ways it might not, and explain how those considerations shape the position."
+      ]
+    },
+    {
+      "id": "issue_65bf94fa9c",
+      "statement": "Universities should require every student to take a variety of courses outside the student's field of study.",
+      "instruction": "Write a response in which you discuss your views on the policy and explain your reasoning for the position you take. In developing and supporting your position, you should consider the possible consequences of implementing the policy and explain how these consequences shape your position.",
+      "variant": "policy",
+      "variant_summary": "Take a position on a policy, argued through its consequences.",
+      "required_moves": [
+        "State a position on the policy.",
+        "Consider the possible consequences of implementing it.",
+        "Explain how those consequences shape the position."
+      ]
+    },
+    {
+      "id": "issue_63e71bf284",
+      "statement": "The best ideas arise from a passionate interest in commonplace things.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the statement and explain your reasoning for the position you take. In developing and supporting your position, you should consider ways in which the statement might or might not hold true and explain how these considerations shape your position.",
+      "variant": "statement",
+      "variant_summary": "Agree/disagree with a statement, qualified by when it does and does not hold.",
+      "required_moves": [
+        "State a position on the statement.",
+        "Consider ways the statement might hold true.",
+        "Consider ways it might not, and explain how those considerations shape the position."
+      ]
+    },
+    {
+      "id": "issue_31aaa21a4c",
+      "statement": "To be an effective leader, a public official must maintain the highest ethical and moral standards.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the claim. In developing and supporting your position, be sure to address the most compelling reasons and/or examples that could be used to challenge your position.",
+      "variant": "claim_challenge",
+      "variant_summary": "Agree/disagree with the claim, and confront the strongest case against you.",
+      "required_moves": [
+        "State a position on the claim.",
+        "Raise the most compelling reasons or examples that could challenge that position.",
+        "Answer those challenges rather than merely acknowledging them."
+      ]
+    },
+    {
+      "id": "issue_5e5acf6960",
+      "statement": "Claim: Imagination is a more valuable asset than experience. Reason: People who lack experience are free to imagine what is possible without the constraints of established habits and attitudes.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the claim and the reason on which that claim is based.",
+      "variant": "claim_and_reason",
+      "variant_summary": "Agree/disagree with BOTH the claim and the reason offered for it.",
+      "required_moves": [
+        "State a position on the claim.",
+        "State a separate position on the reason -- a claim can be right for the wrong reason.",
+        "Address the logical link between reason and claim explicitly."
+      ]
+    },
+    {
+      "id": "issue_6634213b59",
+      "statement": "In most professions and academic fields, imagination is more important than knowledge.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the statement and explain your reasoning for the position you take. In developing and supporting your position, you should consider ways in which the statement might or might not hold true and explain how these considerations shape your position.",
+      "variant": "statement",
+      "variant_summary": "Agree/disagree with a statement, qualified by when it does and does not hold.",
+      "required_moves": [
+        "State a position on the statement.",
+        "Consider ways the statement might hold true.",
+        "Consider ways it might not, and explain how those considerations shape the position."
+      ]
+    },
+    {
+      "id": "issue_2b54b3b169",
+      "statement": "To be an effective leader, a public official must maintain the highest ethical and moral standards.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the statement and explain your reasoning for the position you take. In developing and supporting your position, you should consider ways in which the statement might or might not hold true and explain how these considerations shape your position.",
+      "variant": "statement",
+      "variant_summary": "Agree/disagree with a statement, qualified by when it does and does not hold.",
+      "required_moves": [
+        "State a position on the statement.",
+        "Consider ways the statement might hold true.",
+        "Consider ways it might not, and explain how those considerations shape the position."
+      ]
+    },
+    {
+      "id": "issue_c419215941",
+      "statement": "Critical judgment of work in any given field has little value unless it comes from someone who is an expert in that field.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the statement and explain your reasoning for the position you take. In developing and supporting your position, you should consider ways in which the statement might or might not hold true and explain how these considerations shape your position.",
+      "variant": "statement",
+      "variant_summary": "Agree/disagree with a statement, qualified by when it does and does not hold.",
+      "required_moves": [
+        "State a position on the statement.",
+        "Consider ways the statement might hold true.",
+        "Consider ways it might not, and explain how those considerations shape the position."
+      ]
+    },
+    {
+      "id": "issue_98f72c513e",
+      "statement": "Some people believe that scientific discoveries have given us a much better understanding of the world around us. Others believe that science has revealed to us that the world is infinitely more complex than we ever realized.",
+      "instruction": "Write a response in which you discuss which view more closely aligns with your own position and explain your reasoning for the position you take. In developing and supporting your position, you should address both of the views presented.",
+      "variant": "two_views",
+      "variant_summary": "Choose between two opposing views and defend the choice.",
+      "required_moves": [
+        "Say which of the two views is closer to your own position.",
+        "Address BOTH views -- ignoring the rejected view is the standard failure here.",
+        "Explain the reasoning behind the choice."
+      ]
+    },
+    {
+      "id": "issue_369951be60",
+      "statement": "Critical judgment of work in any given field has little value unless it comes from someone who is an expert in that field.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the claim. In developing and supporting your position, be sure to address the most compelling reasons and/or examples that could be used to challenge your position.",
+      "variant": "claim_challenge",
+      "variant_summary": "Agree/disagree with the claim, and confront the strongest case against you.",
+      "required_moves": [
+        "State a position on the claim.",
+        "Raise the most compelling reasons or examples that could challenge that position.",
+        "Answer those challenges rather than merely acknowledging them."
+      ]
+    },
+    {
+      "id": "issue_cda37f6ebf",
+      "statement": "In any profession -- business, politics, education, government -- those in power should step down after five years.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the claim. In developing and supporting your position, be sure to address the most compelling reasons and/or examples that could be used to challenge your position.",
+      "variant": "claim_challenge",
+      "variant_summary": "Agree/disagree with the claim, and confront the strongest case against you.",
+      "required_moves": [
+        "State a position on the claim.",
+        "Raise the most compelling reasons or examples that could challenge that position.",
+        "Answer those challenges rather than merely acknowledging them."
+      ]
+    },
+    {
+      "id": "issue_e6fb548d05",
+      "statement": "Requiring university students to take a variety of courses outside their major fields of study is the best way to ensure that students become truly educated.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the statement and explain your reasoning for the position you take. In developing and supporting your position, you should consider ways in which the statement might or might not hold true and explain how these considerations shape your position.",
+      "variant": "statement",
+      "variant_summary": "Agree/disagree with a statement, qualified by when it does and does not hold.",
+      "required_moves": [
+        "State a position on the statement.",
+        "Consider ways the statement might hold true.",
+        "Consider ways it might not, and explain how those considerations shape the position."
+      ]
+    },
+    {
+      "id": "issue_fc6f3bc6bd",
+      "statement": "Claim: The surest indicator of a great nation is not the achievements of its rulers, artists, or scientists. Reason: The surest indicator of a great nation is actually the welfare of all its people.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the claim and the reason on which that claim is based.",
+      "variant": "claim_and_reason",
+      "variant_summary": "Agree/disagree with BOTH the claim and the reason offered for it.",
+      "required_moves": [
+        "State a position on the claim.",
+        "State a separate position on the reason -- a claim can be right for the wrong reason.",
+        "Address the logical link between reason and claim explicitly."
+      ]
+    },
+    {
+      "id": "issue_66d495e0ad",
+      "statement": "Any leader who is quickly and easily influenced by shifts in popular opinion will accomplish little.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the statement and explain your reasoning for the position you take. In developing and supporting your position, you should consider ways in which the statement might or might not hold true and explain how these considerations shape your position.",
+      "variant": "statement",
+      "variant_summary": "Agree/disagree with a statement, qualified by when it does and does not hold.",
+      "required_moves": [
+        "State a position on the statement.",
+        "Consider ways the statement might hold true.",
+        "Consider ways it might not, and explain how those considerations shape the position."
+      ]
+    },
+    {
+      "id": "issue_ccf5ca5f6b",
+      "statement": "Government officials should rely on their own judgment rather than unquestioningly carry out the will of the people whom they serve.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the statement and explain your reasoning for the position you take. In developing and supporting your position, you should consider ways in which the statement might or might not hold true and explain how these considerations shape your position.",
+      "variant": "statement",
+      "variant_summary": "Agree/disagree with a statement, qualified by when it does and does not hold.",
+      "required_moves": [
+        "State a position on the statement.",
+        "Consider ways the statement might hold true.",
+        "Consider ways it might not, and explain how those considerations shape the position."
+      ]
+    },
+    {
+      "id": "issue_245e949551",
+      "statement": "A nation should require all of its students to study the same national curriculum until they enter college.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the statement and explain your reasoning for the position you take. In developing and supporting your position, you should consider ways in which the statement might or might not hold true and explain how these considerations shape your position.",
+      "variant": "statement",
+      "variant_summary": "Agree/disagree with a statement, qualified by when it does and does not hold.",
+      "required_moves": [
+        "State a position on the statement.",
+        "Consider ways the statement might hold true.",
+        "Consider ways it might not, and explain how those considerations shape the position."
+      ]
+    },
+    {
+      "id": "issue_fa9e0b750f",
+      "statement": "It is primarily in cities that a nation's cultural traditions are generated and preserved.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the statement and explain your reasoning for the position you take. In developing and supporting your position, you should consider ways in which the statement might or might not hold true and explain how these considerations shape your position.",
+      "variant": "statement",
+      "variant_summary": "Agree/disagree with a statement, qualified by when it does and does not hold.",
+      "required_moves": [
+        "State a position on the statement.",
+        "Consider ways the statement might hold true.",
+        "Consider ways it might not, and explain how those considerations shape the position."
+      ]
+    },
+    {
+      "id": "issue_9685adfe5f",
+      "statement": "We can learn much more from people whose views we share than from people whose views contradict our own.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the statement and explain your reasoning for the position you take. In developing and supporting your position, you should consider ways in which the statement might or might not hold true and explain how these considerations shape your position.",
+      "variant": "statement",
+      "variant_summary": "Agree/disagree with a statement, qualified by when it does and does not hold.",
+      "required_moves": [
+        "State a position on the statement.",
+        "Consider ways the statement might hold true.",
+        "Consider ways it might not, and explain how those considerations shape the position."
+      ]
+    },
+    {
+      "id": "issue_8b74a3722f",
+      "statement": "When old buildings stand on ground that modern planners feel could be better used for modern purposes, modern development should be given precedence over the preservation of historic buildings.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the statement and explain your reasoning for the position you take. In developing and supporting your position, you should consider ways in which the statement might or might not hold true and explain how these considerations shape your position.",
+      "variant": "statement",
+      "variant_summary": "Agree/disagree with a statement, qualified by when it does and does not hold.",
+      "required_moves": [
+        "State a position on the statement.",
+        "Consider ways the statement might hold true.",
+        "Consider ways it might not, and explain how those considerations shape the position."
+      ]
+    },
+    {
+      "id": "issue_f0d1cda57a",
+      "statement": "Claim: The surest indicator of a great nation must be the achievements of its rulers, artists, or scientists. Reason: Great achievements by a nation's rulers, artists, or scientists will ensure a good life for the majority of that nation's people.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the claim and the reason on which that claim is based.",
+      "variant": "claim_and_reason",
+      "variant_summary": "Agree/disagree with BOTH the claim and the reason offered for it.",
+      "required_moves": [
+        "State a position on the claim.",
+        "State a separate position on the reason -- a claim can be right for the wrong reason.",
+        "Address the logical link between reason and claim explicitly."
+      ]
+    },
+    {
+      "id": "issue_5ecefd08fc",
+      "statement": "Some people claim that you can tell whether a nation is great by looking at the achievements of its rulers, artists, or scientists. Others argue that the surest indicator of a great nation is, in fact, the general welfare of all its people.",
+      "instruction": "Write a response in which you discuss which view more closely aligns with your own position and explain your reasoning for the position you take. In developing and supporting your position, you should address both of the views presented.",
+      "variant": "two_views",
+      "variant_summary": "Choose between two opposing views and defend the choice.",
+      "required_moves": [
+        "Say which of the two views is closer to your own position.",
+        "Address BOTH views -- ignoring the rejected view is the standard failure here.",
+        "Explain the reasoning behind the choice."
+      ]
+    },
+    {
+      "id": "issue_6d7fa09f02",
+      "statement": "The best way to understand the character of a society is to examine the character of the men and women that the society chooses as its heroes or its role models.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the claim. In developing and supporting your position, be sure to address the most compelling reasons and/or examples that could be used to challenge your position.",
+      "variant": "claim_challenge",
+      "variant_summary": "Agree/disagree with the claim, and confront the strongest case against you.",
+      "required_moves": [
+        "State a position on the claim.",
+        "Raise the most compelling reasons or examples that could challenge that position.",
+        "Answer those challenges rather than merely acknowledging them."
+      ]
+    },
+    {
+      "id": "issue_5c17c96bf7",
+      "statement": "All college and university students would benefit from spending at least one semester studying in a foreign country.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the statement and explain your reasoning for the position you take. In developing and supporting your position, you should consider ways in which the statement might or might not hold true and explain how these considerations shape your position.",
+      "variant": "statement",
+      "variant_summary": "Agree/disagree with a statement, qualified by when it does and does not hold.",
+      "required_moves": [
+        "State a position on the statement.",
+        "Consider ways the statement might hold true.",
+        "Consider ways it might not, and explain how those considerations shape the position."
+      ]
+    },
+    {
+      "id": "issue_8f9b4101f2",
+      "statement": "Some people claim that a nation's government should preserve its wilderness areas in their natural state. Others argue that these areas should be developed for potential economic gain.",
+      "instruction": "Write a response in which you discuss which view more closely aligns with your own position and explain your reasoning for the position you take. In developing and supporting your position, you should address both of the views presented.",
+      "variant": "two_views",
+      "variant_summary": "Choose between two opposing views and defend the choice.",
+      "required_moves": [
+        "Say which of the two views is closer to your own position.",
+        "Address BOTH views -- ignoring the rejected view is the standard failure here.",
+        "Explain the reasoning behind the choice."
+      ]
+    },
+    {
+      "id": "issue_fda217081f",
+      "statement": "In most professions and academic fields, imagination is more important than knowledge.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the claim. In developing and supporting your position, be sure to address the most compelling reasons and/or examples that could be used to challenge your position.",
+      "variant": "claim_challenge",
+      "variant_summary": "Agree/disagree with the claim, and confront the strongest case against you.",
+      "required_moves": [
+        "State a position on the claim.",
+        "Raise the most compelling reasons or examples that could challenge that position.",
+        "Answer those challenges rather than merely acknowledging them."
+      ]
+    },
+    {
+      "id": "issue_19789b475f",
+      "statement": "The surest indicator of a great nation is not the achievements of its rulers, artists, or scientists, but the general well-being of all its people.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the claim. In developing and supporting your position, be sure to address the most compelling reasons and/or examples that could be used to challenge your position.",
+      "variant": "claim_challenge",
+      "variant_summary": "Agree/disagree with the claim, and confront the strongest case against you.",
+      "required_moves": [
+        "State a position on the claim.",
+        "Raise the most compelling reasons or examples that could challenge that position.",
+        "Answer those challenges rather than merely acknowledging them."
+      ]
+    },
+    {
+      "id": "issue_6ae1067668",
+      "statement": "Some people argue that successful leaders in government, industry, or other fields must be highly competitive. Other people claim that in order to be successful, a leader must be willing and able to cooperate with others.",
+      "instruction": "Write a response in which you discuss which view more closely aligns with your own position and explain your reasoning for the position you take. In developing and supporting your position, you should address both of the views presented.",
+      "variant": "two_views",
+      "variant_summary": "Choose between two opposing views and defend the choice.",
+      "required_moves": [
+        "Say which of the two views is closer to your own position.",
+        "Address BOTH views -- ignoring the rejected view is the standard failure here.",
+        "Explain the reasoning behind the choice."
+      ]
+    },
+    {
+      "id": "issue_190a1094c3",
+      "statement": "College students should base their choice of a field of study on the availability of jobs in that field.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the recommendation and explain your reasoning for the position you take. In developing and supporting your position, describe specific circumstances in which adopting the recommendation would or would not be advantageous and explain how these examples shape your position.",
+      "variant": "recommendation",
+      "variant_summary": "Agree/disagree with a recommendation, argued through specific circumstances.",
+      "required_moves": [
+        "State a position on the recommendation.",
+        "Describe specific circumstances where adopting it would be advantageous.",
+        "Describe specific circumstances where it would not be, and explain how both shape the position."
+      ]
+    },
+    {
+      "id": "issue_65080cf807",
+      "statement": "Some people believe that corporations have a responsibility to promote the well- being of the societies and environments in which they operate. Others believe that the only responsibility of corporations, provided they operate within the law, is to make as much money as possible.",
+      "instruction": "Write a response in which you discuss which view more closely aligns with your own position and explain your reasoning for the position you take. In developing and supporting your position, you should address both of the views presented.",
+      "variant": "two_views",
+      "variant_summary": "Choose between two opposing views and defend the choice.",
+      "required_moves": [
+        "Say which of the two views is closer to your own position.",
+        "Address BOTH views -- ignoring the rejected view is the standard failure here.",
+        "Explain the reasoning behind the choice."
+      ]
+    },
+    {
+      "id": "issue_b5873d3851",
+      "statement": "Claim: Researchers should not limit their investigations to only those areas in which they expect to discover something that has an immediate, practical application. Reason: It is impossible to predict the outcome of a line of research with any certainty.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the claim and the reason on which that claim is based.",
+      "variant": "claim_and_reason",
+      "variant_summary": "Agree/disagree with BOTH the claim and the reason offered for it.",
+      "required_moves": [
+        "State a position on the claim.",
+        "State a separate position on the reason -- a claim can be right for the wrong reason.",
+        "Address the logical link between reason and claim explicitly."
+      ]
+    },
+    {
+      "id": "issue_c5b2336c8d",
+      "statement": "Some people believe that our ever-increasing use of technology significantly reduces our opportunities for human interaction. Other people believe that technology provides us with new and better ways to communicate and connect with one another.",
+      "instruction": "Write a response in which you discuss which view more closely aligns with your own position and explain your reasoning for the position you take. In developing and supporting your position, you should address both of the views presented.",
+      "variant": "two_views",
+      "variant_summary": "Choose between two opposing views and defend the choice.",
+      "required_moves": [
+        "Say which of the two views is closer to your own position.",
+        "Address BOTH views -- ignoring the rejected view is the standard failure here.",
+        "Explain the reasoning behind the choice."
+      ]
+    },
+    {
+      "id": "issue_3b27b71c56",
+      "statement": "Claim: Knowing about the past cannot help people to make important decisions today. Reason: The world today is significantly more complex than it was even in the relatively recent past.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the claim and the reason on which that claim is based.",
+      "variant": "claim_and_reason",
+      "variant_summary": "Agree/disagree with BOTH the claim and the reason offered for it.",
+      "required_moves": [
+        "State a position on the claim.",
+        "State a separate position on the reason -- a claim can be right for the wrong reason.",
+        "Address the logical link between reason and claim explicitly."
+      ]
+    },
+    {
+      "id": "issue_9516ed4f7d",
+      "statement": "Claim: Knowing about the past cannot help people to make important decisions today. Reason: We are not able to make connections between current events and past events until we have some distance from both.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the claim and the reason on which that claim is based.",
+      "variant": "claim_and_reason",
+      "variant_summary": "Agree/disagree with BOTH the claim and the reason offered for it.",
+      "required_moves": [
+        "State a position on the claim.",
+        "State a separate position on the reason -- a claim can be right for the wrong reason.",
+        "Address the logical link between reason and claim explicitly."
+      ]
+    },
+    {
+      "id": "issue_3c13ae997d",
+      "statement": "Educational institutions should actively encourage their students to choose fields of study that will prepare them for lucrative careers.",
+      "instruction": "Write a response in which you discuss your views on the policy and explain your reasoning for the position you take. In developing and supporting your position, you should consider the possible consequences of implementing the policy and explain how these consequences shape your position.",
+      "variant": "policy",
+      "variant_summary": "Take a position on a policy, argued through its consequences.",
+      "required_moves": [
+        "State a position on the policy.",
+        "Consider the possible consequences of implementing it.",
+        "Explain how those consequences shape the position."
+      ]
+    },
+    {
+      "id": "issue_287fc16eb7",
+      "statement": "Educational institutions should actively encourage their students to choose fields of study in which jobs are plentiful.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the claim. In developing and supporting your position, be sure to address the most compelling reasons and/or examples that could be used to challenge your position.",
+      "variant": "claim_challenge",
+      "variant_summary": "Agree/disagree with the claim, and confront the strongest case against you.",
+      "required_moves": [
+        "State a position on the claim.",
+        "Raise the most compelling reasons or examples that could challenge that position.",
+        "Answer those challenges rather than merely acknowledging them."
+      ]
+    },
+    {
+      "id": "issue_461d930bc3",
+      "statement": "Educational institutions have a responsibility to dissuade students from pursuing fields of study in which they are unlikely to succeed.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the statement and explain your reasoning for the position you take. In developing and supporting your position, you should consider ways in which the statement might or might not hold true and explain how these considerations shape your position.",
+      "variant": "statement",
+      "variant_summary": "Agree/disagree with a statement, qualified by when it does and does not hold.",
+      "required_moves": [
+        "State a position on the statement.",
+        "Consider ways the statement might hold true.",
+        "Consider ways it might not, and explain how those considerations shape the position."
+      ]
+    },
+    {
+      "id": "issue_0f5fc6a60f",
+      "statement": "Some people believe that competition for high grades motivates students to excel in the classroom. Others believe that such competition seriously limits the quality of real learning.",
+      "instruction": "Write a response in which you discuss which view more closely aligns with your own position and explain your reasoning for the position you take. In developing and supporting your position, you should address both of the views presented.",
+      "variant": "two_views",
+      "variant_summary": "Choose between two opposing views and defend the choice.",
+      "required_moves": [
+        "Say which of the two views is closer to your own position.",
+        "Address BOTH views -- ignoring the rejected view is the standard failure here.",
+        "Explain the reasoning behind the choice."
+      ]
+    },
+    {
+      "id": "issue_212ab55a89",
+      "statement": "Claim: Major policy decisions should always be left to politicians and other government experts. Reason: Politicians and other government experts are more informed and thus have better judgment and perspective than do members of the general public.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the claim and the reason on which that claim is based.",
+      "variant": "claim_and_reason",
+      "variant_summary": "Agree/disagree with BOTH the claim and the reason offered for it.",
+      "required_moves": [
+        "State a position on the claim.",
+        "State a separate position on the reason -- a claim can be right for the wrong reason.",
+        "Address the logical link between reason and claim explicitly."
+      ]
+    },
+    {
+      "id": "issue_24acf69762",
+      "statement": "Some people believe that universities should require every student to take a variety of courses outside the student's field of study. Others believe that universities should not force students to take any courses other than those that will help prepare them for jobs in their chosen fields.",
+      "instruction": "Write a response in which you discuss which view more closely aligns with your own position and explain your reasoning for the position you take. In developing and supporting your position, you should address both of the views presented.",
+      "variant": "two_views",
+      "variant_summary": "Choose between two opposing views and defend the choice.",
+      "required_moves": [
+        "Say which of the two views is closer to your own position.",
+        "Address BOTH views -- ignoring the rejected view is the standard failure here.",
+        "Explain the reasoning behind the choice."
+      ]
+    },
+    {
+      "id": "issue_8ae8cba155",
+      "statement": "It is more harmful to compromise one's own beliefs than to adhere to them.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the statement and explain your reasoning for the position you take. In developing and supporting your position, you should consider ways in which the statement might or might not hold true and explain how these considerations shape your position.",
+      "variant": "statement",
+      "variant_summary": "Agree/disagree with a statement, qualified by when it does and does not hold.",
+      "required_moves": [
+        "State a position on the statement.",
+        "Consider ways the statement might hold true.",
+        "Consider ways it might not, and explain how those considerations shape the position."
+      ]
+    },
+    {
+      "id": "issue_cb579f77c6",
+      "statement": "Claim: Colleges and universities should specify all required courses and eliminate elective courses in order to provide clear guidance for students. Reason: College students -- like people in general -- prefer to follow directions rather than make their own decisions.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the claim and the reason on which that claim is based.",
+      "variant": "claim_and_reason",
+      "variant_summary": "Agree/disagree with BOTH the claim and the reason offered for it.",
+      "required_moves": [
+        "State a position on the claim.",
+        "State a separate position on the reason -- a claim can be right for the wrong reason.",
+        "Address the logical link between reason and claim explicitly."
+      ]
+    },
+    {
+      "id": "issue_e61a222c89",
+      "statement": "No field of study can advance significantly unless it incorporates knowledge and experience from outside that field.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the statement and explain your reasoning for the position you take. In developing and supporting your position, you should consider ways in which the statement might or might not hold true and explain how these considerations shape your position.",
+      "variant": "statement",
+      "variant_summary": "Agree/disagree with a statement, qualified by when it does and does not hold.",
+      "required_moves": [
+        "State a position on the statement.",
+        "Consider ways the statement might hold true.",
+        "Consider ways it might not, and explain how those considerations shape the position."
+      ]
+    },
+    {
+      "id": "issue_204ba694b0",
+      "statement": "True success can be measured primarily in terms of the goals one sets for oneself.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the statement and explain your reasoning for the position you take. In developing and supporting your position, you should consider ways in which the statement might or might not hold true and explain how these considerations shape your position.",
+      "variant": "statement",
+      "variant_summary": "Agree/disagree with a statement, qualified by when it does and does not hold.",
+      "required_moves": [
+        "State a position on the statement.",
+        "Consider ways the statement might hold true.",
+        "Consider ways it might not, and explain how those considerations shape the position."
+      ]
+    },
+    {
+      "id": "issue_fd5adeb3f8",
+      "statement": "The general welfare of a nation's people is a better indication of that nation's greatness than are the achievements of its rulers, artists, or scientists.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the claim. In developing and supporting your position, be sure to address the most compelling reasons and/or examples that could be used to challenge your position.",
+      "variant": "claim_challenge",
+      "variant_summary": "Agree/disagree with the claim, and confront the strongest case against you.",
+      "required_moves": [
+        "State a position on the claim.",
+        "Raise the most compelling reasons or examples that could challenge that position.",
+        "Answer those challenges rather than merely acknowledging them."
+      ]
+    },
+    {
+      "id": "issue_a121ea7a0d",
+      "statement": "The best test of an argument is the argument's ability to convince someone with an opposing viewpoint.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the statement and explain your reasoning for the position you take. In developing and supporting your position, you should consider ways in which the statement might or might not hold true and explain how these considerations shape your position.",
+      "variant": "statement",
+      "variant_summary": "Agree/disagree with a statement, qualified by when it does and does not hold.",
+      "required_moves": [
+        "State a position on the statement.",
+        "Consider ways the statement might hold true.",
+        "Consider ways it might not, and explain how those considerations shape the position."
+      ]
+    },
+    {
+      "id": "issue_73ae3e2f36",
+      "statement": "The effectiveness of a country's leaders is best measured by examining the well- being of that country's citizens.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the statement and explain your reasoning for the position you take. In developing and supporting your position, you should consider ways in which the statement might or might not hold true and explain how these considerations shape your position.",
+      "variant": "statement",
+      "variant_summary": "Agree/disagree with a statement, qualified by when it does and does not hold.",
+      "required_moves": [
+        "State a position on the statement.",
+        "Consider ways the statement might hold true.",
+        "Consider ways it might not, and explain how those considerations shape the position."
+      ]
+    },
+    {
+      "id": "issue_660f1176bc",
+      "statement": "Nations should pass laws to preserve any remaining wilderness areas in their natural state.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the claim. In developing and supporting your position, be sure to address the most compelling reasons and/or examples that could be used to challenge your position.",
+      "variant": "claim_challenge",
+      "variant_summary": "Agree/disagree with the claim, and confront the strongest case against you.",
+      "required_moves": [
+        "State a position on the claim.",
+        "Raise the most compelling reasons or examples that could challenge that position.",
+        "Answer those challenges rather than merely acknowledging them."
+      ]
+    },
+    {
+      "id": "issue_f708f83f78",
+      "statement": "In any field -- business, politics, education, government -- those in power should be required to step down after five years.",
+      "instruction": "Write a response in which you discuss your views on the policy and explain your reasoning for the position you take. In developing and supporting your position, you should consider the possible consequences of implementing the policy and explain how these consequences shape your position.",
+      "variant": "policy",
+      "variant_summary": "Take a position on a policy, argued through its consequences.",
+      "required_moves": [
+        "State a position on the policy.",
+        "Consider the possible consequences of implementing it.",
+        "Explain how those consequences shape the position."
+      ]
+    },
+    {
+      "id": "issue_b9b7820a1b",
+      "statement": "Some people claim that the goal of politics should be the pursuit of an ideal. Others argue that the goal should be finding common ground and reaching reasonable consensus.",
+      "instruction": "Write a response in which you discuss which view more closely aligns with your own position and explain your reasoning for the position you take. In developing and supporting your position, you should address both of the views presented.",
+      "variant": "two_views",
+      "variant_summary": "Choose between two opposing views and defend the choice.",
+      "required_moves": [
+        "Say which of the two views is closer to your own position.",
+        "Address BOTH views -- ignoring the rejected view is the standard failure here.",
+        "Explain the reasoning behind the choice."
+      ]
+    },
+    {
+      "id": "issue_70d426b466",
+      "statement": "The best way to solve environmental problems caused by consumer-generated waste is for towns and cities to impose strict limits on the amount of trash they will accept from each household.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the claim. In developing and supporting your position, be sure to address the most compelling reasons and/or examples that could be used to challenge your position.",
+      "variant": "claim_challenge",
+      "variant_summary": "Agree/disagree with the claim, and confront the strongest case against you.",
+      "required_moves": [
+        "State a position on the claim.",
+        "Raise the most compelling reasons or examples that could challenge that position.",
+        "Answer those challenges rather than merely acknowledging them."
+      ]
+    },
+    {
+      "id": "issue_aca0cf6a81",
+      "statement": "We learn our most valuable lessons in life from struggling with our limitations rather than from enjoying our successes.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the claim. In developing and supporting your position, be sure to address the most compelling reasons and/or examples that could be used to challenge your position.",
+      "variant": "claim_challenge",
+      "variant_summary": "Agree/disagree with the claim, and confront the strongest case against you.",
+      "required_moves": [
+        "State a position on the claim.",
+        "Raise the most compelling reasons or examples that could challenge that position.",
+        "Answer those challenges rather than merely acknowledging them."
+      ]
+    },
+    {
+      "id": "issue_fed8729365",
+      "statement": "Claim: While boredom is often expressed with a sense of self-satisfaction, it should really be a source of embarrassment. Reason: Boredom arises from a lack of imagination and self-motivation.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the claim and the reason on which that claim is based.",
+      "variant": "claim_and_reason",
+      "variant_summary": "Agree/disagree with BOTH the claim and the reason offered for it.",
+      "required_moves": [
+        "State a position on the claim.",
+        "State a separate position on the reason -- a claim can be right for the wrong reason.",
+        "Address the logical link between reason and claim explicitly."
+      ]
+    },
+    {
+      "id": "issue_e16edfaeca",
+      "statement": "Some people believe that the most important qualities of an effective teacher are understanding and empathy. Others believe that it is more important for teachers to be rigorous and demanding in their expectations for students.",
+      "instruction": "Write a response in which you discuss which view more closely aligns with your own position and explain your reasoning for the position you take. In developing and supporting your position, you should address both of the views presented.",
+      "variant": "two_views",
+      "variant_summary": "Choose between two opposing views and defend the choice.",
+      "required_moves": [
+        "Say which of the two views is closer to your own position.",
+        "Address BOTH views -- ignoring the rejected view is the standard failure here.",
+        "Explain the reasoning behind the choice."
+      ]
+    },
+    {
+      "id": "issue_40a5d4f09d",
+      "statement": "Claim: Though often considered an objective pursuit, learning about the historical past requires creativity. Reason: Because we can never know the past directly, we must reconstruct it by imaginatively interpreting historical accounts, documents, and artifacts.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the claim and the reason on which the claim is based.",
+      "variant": "claim_and_reason",
+      "variant_summary": "Agree/disagree with BOTH the claim and the reason offered for it.",
+      "required_moves": [
+        "State a position on the claim.",
+        "State a separate position on the reason -- a claim can be right for the wrong reason.",
+        "Address the logical link between reason and claim explicitly."
+      ]
+    },
+    {
+      "id": "issue_0f65c5c3c8",
+      "statement": "Claim: No act is done purely for the benefit of others. Reason: All actions -- even those that seem to be done for other people -- are based on self-interest.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the claim and the reason on which that claim is based.",
+      "variant": "claim_and_reason",
+      "variant_summary": "Agree/disagree with BOTH the claim and the reason offered for it.",
+      "required_moves": [
+        "State a position on the claim.",
+        "State a separate position on the reason -- a claim can be right for the wrong reason.",
+        "Address the logical link between reason and claim explicitly."
+      ]
+    },
+    {
+      "id": "issue_34f24e9b40",
+      "statement": "To understand the most important characteristics of a society, one must study its major cities.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the statement and explain your reasoning for the position you take. In developing and supporting your position, you should consider ways in which the statement might or might not hold true and explain how these considerations shape your position.",
+      "variant": "statement",
+      "variant_summary": "Agree/disagree with a statement, qualified by when it does and does not hold.",
+      "required_moves": [
+        "State a position on the statement.",
+        "Consider ways the statement might hold true.",
+        "Consider ways it might not, and explain how those considerations shape the position."
+      ]
+    },
+    {
+      "id": "issue_d321c5c78f",
+      "statement": "Educational institutions have a responsibility to dissuade students from pursuing fields of study in which they are unlikely to succeed.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the claim. In developing and supporting your position, be sure to address the most compelling reasons and/or examples that could be used to challenge your position.",
+      "variant": "claim_challenge",
+      "variant_summary": "Agree/disagree with the claim, and confront the strongest case against you.",
+      "required_moves": [
+        "State a position on the claim.",
+        "Raise the most compelling reasons or examples that could challenge that position.",
+        "Answer those challenges rather than merely acknowledging them."
+      ]
+    },
+    {
+      "id": "issue_8475a3eab4",
+      "statement": "Scandals are useful because they focus our attention on problems in ways that no speaker or reformer ever could.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the claim. In developing and supporting your position, be sure to address the most compelling reasons and/or examples that could be used to challenge your position.",
+      "variant": "claim_challenge",
+      "variant_summary": "Agree/disagree with the claim, and confront the strongest case against you.",
+      "required_moves": [
+        "State a position on the claim.",
+        "Raise the most compelling reasons or examples that could challenge that position.",
+        "Answer those challenges rather than merely acknowledging them."
+      ]
+    },
+    {
+      "id": "issue_e1e3b9f0a4",
+      "statement": "Claim: Governments must ensure that their major cities receive the financial support they need in order to thrive. Reason: It is primarily in cities that a nation's cultural traditions are preserved and generated.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the claim and the reason on which that claim is based.",
+      "variant": "claim_and_reason",
+      "variant_summary": "Agree/disagree with BOTH the claim and the reason offered for it.",
+      "required_moves": [
+        "State a position on the claim.",
+        "State a separate position on the reason -- a claim can be right for the wrong reason.",
+        "Address the logical link between reason and claim explicitly."
+      ]
+    },
+    {
+      "id": "issue_bbd9544686",
+      "statement": "Some people believe that government funding of the arts is necessary to ensure that the arts can flourish and be available to all people. Others believe that government funding of the arts threatens the integrity of the arts.",
+      "instruction": "Write a response in which you discuss which view more closely aligns with your own position and explain your reasoning for the position you take. In developing and supporting your position, you should address both of the views presented.",
+      "variant": "two_views",
+      "variant_summary": "Choose between two opposing views and defend the choice.",
+      "required_moves": [
+        "Say which of the two views is closer to your own position.",
+        "Address BOTH views -- ignoring the rejected view is the standard failure here.",
+        "Explain the reasoning behind the choice."
+      ]
+    },
+    {
+      "id": "issue_a0579ba563",
+      "statement": "Claim: In any field -- business, politics, education, government -- those in power should step down after five years. Reason: The surest path to success for any enterprise is revitalization through new leadership.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the claim and the reason on which that claim is based.",
+      "variant": "claim_and_reason",
+      "variant_summary": "Agree/disagree with BOTH the claim and the reason offered for it.",
+      "required_moves": [
+        "State a position on the claim.",
+        "State a separate position on the reason -- a claim can be right for the wrong reason.",
+        "Address the logical link between reason and claim explicitly."
+      ]
+    },
+    {
+      "id": "issue_a5787b4ed7",
+      "statement": "In any field of endeavor, it is impossible to make a significant contribution without first being strongly influenced by past achievements within that field.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the statement and explain your reasoning for the position you take. In developing and supporting your position, you should consider ways in which the statement might or might not hold true and explain how these considerations shape your position.",
+      "variant": "statement",
+      "variant_summary": "Agree/disagree with a statement, qualified by when it does and does not hold.",
+      "required_moves": [
+        "State a position on the statement.",
+        "Consider ways the statement might hold true.",
+        "Consider ways it might not, and explain how those considerations shape the position."
+      ]
+    },
+    {
+      "id": "issue_14662794a2",
+      "statement": "Nations should pass laws to preserve any remaining wilderness areas in their natural state, even if these areas could be developed for economic gain.",
+      "instruction": "Write a response in which you discuss your views on the policy and explain your reasoning for the position you take. In developing and supporting your position, you should consider the possible consequences of implementing the policy and explain how these consequences shape your position.",
+      "variant": "policy",
+      "variant_summary": "Take a position on a policy, argued through its consequences.",
+      "required_moves": [
+        "State a position on the policy.",
+        "Consider the possible consequences of implementing it.",
+        "Explain how those consequences shape the position."
+      ]
+    },
+    {
+      "id": "issue_ce4cd82b7c",
+      "statement": "People's behavior is largely determined by forces not of their own making.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the statement and explain your reasoning for the position you take. In developing and supporting your position, you should consider ways in which the statement might or might not hold true and explain how these considerations shape your position.",
+      "variant": "statement",
+      "variant_summary": "Agree/disagree with a statement, qualified by when it does and does not hold.",
+      "required_moves": [
+        "State a position on the statement.",
+        "Consider ways the statement might hold true.",
+        "Consider ways it might not, and explain how those considerations shape the position."
+      ]
+    },
+    {
+      "id": "issue_9d68ee041f",
+      "statement": "Governments should offer a free university education to any student who has been admitted to a university but who cannot afford the tuition.",
+      "instruction": "Write a response in which you discuss your views on the policy and explain your reasoning for the position you take. In developing and supporting your position, you should consider the possible consequences of implementing the policy and explain how these consequences shape your position.",
+      "variant": "policy",
+      "variant_summary": "Take a position on a policy, argued through its consequences.",
+      "required_moves": [
+        "State a position on the policy.",
+        "Consider the possible consequences of implementing it.",
+        "Explain how those consequences shape the position."
+      ]
+    },
+    {
+      "id": "issue_eacd473999",
+      "statement": "Claim: In any situation, the best way to persuade other people is to present them with facts and statistics rather than with emotional arguments. Reason: Facts are objective, so they are more persuasive than subjective appeals.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the claim and the reason on which that claim is based.",
+      "variant": "claim_and_reason",
+      "variant_summary": "Agree/disagree with BOTH the claim and the reason offered for it.",
+      "required_moves": [
+        "State a position on the claim.",
+        "State a separate position on the reason -- a claim can be right for the wrong reason.",
+        "Address the logical link between reason and claim explicitly."
+      ]
+    },
+    {
+      "id": "issue_6f996dcda6",
+      "statement": "Some people believe that success in creative fields, such as painting, fiction writing, and filmmaking, primarily requires hard work and perseverance. Others believe that such success mainly requires innate talents that cannot be learned.",
+      "instruction": "Write a response in which you discuss which view more closely aligns with your own position and explain your reasoning for the position you take. In developing and supporting your position, you should address both of the views presented.",
+      "variant": "two_views",
+      "variant_summary": "Choose between two opposing views and defend the choice.",
+      "required_moves": [
+        "Say which of the two views is closer to your own position.",
+        "Address BOTH views -- ignoring the rejected view is the standard failure here.",
+        "Explain the reasoning behind the choice."
+      ]
+    },
+    {
+      "id": "issue_baecbb7cee",
+      "statement": "In business, education, and government, it is always appropriate to remain skeptical of new leaders until those leaders show that they are worthy of trust.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the claim. In developing and supporting your position, be sure to address the most compelling reasons and/or examples that could be used to challenge your position.",
+      "variant": "claim_challenge",
+      "variant_summary": "Agree/disagree with the claim, and confront the strongest case against you.",
+      "required_moves": [
+        "State a position on the claim.",
+        "Raise the most compelling reasons or examples that could challenge that position.",
+        "Answer those challenges rather than merely acknowledging them."
+      ]
+    },
+    {
+      "id": "issue_3ea22e0c6d",
+      "statement": "Claim: Group assignments that students must work together to complete should replace a substantial amount of traditional lecture-based instruction in college and university courses. Reason: It is vital for students to gain experience collaborating with peers to study a topic and to achieve a common goal.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the claim and the reason on which that claim is based.",
+      "variant": "claim_and_reason",
+      "variant_summary": "Agree/disagree with BOTH the claim and the reason offered for it.",
+      "required_moves": [
+        "State a position on the claim.",
+        "State a separate position on the reason -- a claim can be right for the wrong reason.",
+        "Address the logical link between reason and claim explicitly."
+      ]
+    },
+    {
+      "id": "issue_fbbe1f7b7c",
+      "statement": "Universities should require every student to take a variety of courses outside the student's field of study.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the claim. In developing and supporting your position, be sure to address the most compelling reasons and/or examples that could be used to challenge your position.",
+      "variant": "claim_challenge",
+      "variant_summary": "Agree/disagree with the claim, and confront the strongest case against you.",
+      "required_moves": [
+        "State a position on the claim.",
+        "Raise the most compelling reasons or examples that could challenge that position.",
+        "Answer those challenges rather than merely acknowledging them."
+      ]
+    },
+    {
+      "id": "issue_68cf093539",
+      "statement": "A nation should require all of its students to study the same national curriculum until they enter college.",
+      "instruction": "Write a response in which you discuss your views on the policy and explain your reasoning for the position you take. In developing and supporting your position, you should consider the possible consequences of implementing the policy and explain how these consequences shape your position.",
+      "variant": "policy",
+      "variant_summary": "Take a position on a policy, argued through its consequences.",
+      "required_moves": [
+        "State a position on the policy.",
+        "Consider the possible consequences of implementing it.",
+        "Explain how those consequences shape the position."
+      ]
+    },
+    {
+      "id": "issue_11e5581b62",
+      "statement": "Educational institutions should actively encourage their students to choose fields of study that will prepare them for lucrative careers.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the claim. In developing and supporting your position, be sure to address the most compelling reasons and/or examples that could be used to challenge your position.",
+      "variant": "claim_challenge",
+      "variant_summary": "Agree/disagree with the claim, and confront the strongest case against you.",
+      "required_moves": [
+        "State a position on the claim.",
+        "Raise the most compelling reasons or examples that could challenge that position.",
+        "Answer those challenges rather than merely acknowledging them."
+      ]
+    },
+    {
+      "id": "issue_535509bfea",
+      "statement": "Some people believe that in order to be effective, political leaders must yield to public opinion and abandon principle for the sake of compromise. Others believe that the most essential quality of an effective leader is the ability to remain consistently committed to particular principles and objectives.",
+      "instruction": "Write a response in which you discuss which view more closely aligns with your own position and explain your reasoning for the position you take. In developing and supporting your position, you should address both of the views presented.",
+      "variant": "two_views",
+      "variant_summary": "Choose between two opposing views and defend the choice.",
+      "required_moves": [
+        "Say which of the two views is closer to your own position.",
+        "Address BOTH views -- ignoring the rejected view is the standard failure here.",
+        "Explain the reasoning behind the choice."
+      ]
+    },
+    {
+      "id": "issue_fdb7167838",
+      "statement": "Formal education tends to restrain our minds and spirits rather than set them free.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the statement and explain your reasoning for the position you take. In developing and supporting your position, you should consider ways in which the statement might or might not hold true and explain how these considerations shape your position.",
+      "variant": "statement",
+      "variant_summary": "Agree/disagree with a statement, qualified by when it does and does not hold.",
+      "required_moves": [
+        "State a position on the statement.",
+        "Consider ways the statement might hold true.",
+        "Consider ways it might not, and explain how those considerations shape the position."
+      ]
+    },
+    {
+      "id": "issue_47c0081ba9",
+      "statement": "The well-being of a society is enhanced when many of its people question authority.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the statement and explain your reasoning for the position you take. In developing and supporting your position, you should consider ways in which the statement might or might not hold true and explain how these considerations shape your position.",
+      "variant": "statement",
+      "variant_summary": "Agree/disagree with a statement, qualified by when it does and does not hold.",
+      "required_moves": [
+        "State a position on the statement.",
+        "Consider ways the statement might hold true.",
+        "Consider ways it might not, and explain how those considerations shape the position."
+      ]
+    },
+    {
+      "id": "issue_3c4f939893",
+      "statement": "Governments should focus on solving the immediate problems of today rather than on trying to solve the anticipated problems of the future.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the recommendation and explain your reasoning for the position you take. In developing and supporting your position, describe specific circumstances in which adopting the recommendation would or would not be advantageous and explain how these examples shape your position.",
+      "variant": "recommendation",
+      "variant_summary": "Agree/disagree with a recommendation, argued through specific circumstances.",
+      "required_moves": [
+        "State a position on the recommendation.",
+        "Describe specific circumstances where adopting it would be advantageous.",
+        "Describe specific circumstances where it would not be, and explain how both shape the position."
+      ]
+    },
+    {
+      "id": "issue_00f529bfb9",
+      "statement": "Some people believe that college students should consider only their own talents and interests when choosing a field of study. Others believe that college students should base their choice of a field of study on the availability of jobs in that field.",
+      "instruction": "Write a response in which you discuss which view more closely aligns with your own position and explain your reasoning for the position you take. In developing and supporting your position, you should address both of the views presented.",
+      "variant": "two_views",
+      "variant_summary": "Choose between two opposing views and defend the choice.",
+      "required_moves": [
+        "Say which of the two views is closer to your own position.",
+        "Address BOTH views -- ignoring the rejected view is the standard failure here.",
+        "Explain the reasoning behind the choice."
+      ]
+    },
+    {
+      "id": "issue_c0a33e0897",
+      "statement": "Laws should be flexible enough to take account of various circumstances, times, and places.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the statement and explain your reasoning for the position you take. In developing and supporting your position, you should consider ways in which the statement might or might not hold true and explain how these considerations shape your position.",
+      "variant": "statement",
+      "variant_summary": "Agree/disagree with a statement, qualified by when it does and does not hold.",
+      "required_moves": [
+        "State a position on the statement.",
+        "Consider ways the statement might hold true.",
+        "Consider ways it might not, and explain how those considerations shape the position."
+      ]
+    },
+    {
+      "id": "issue_0eaa615d20",
+      "statement": "Claim: The best way to understand the character of a society is to examine the character of the men and women that the society chooses as its heroes or its role models. Reason: Heroes and role models reveal a society's highest ideals.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the claim and the reason on which that claim is based.",
+      "variant": "claim_and_reason",
+      "variant_summary": "Agree/disagree with BOTH the claim and the reason offered for it.",
+      "required_moves": [
+        "State a position on the claim.",
+        "State a separate position on the reason -- a claim can be right for the wrong reason.",
+        "Address the logical link between reason and claim explicitly."
+      ]
+    },
+    {
+      "id": "issue_6cf39bfaee",
+      "statement": "Some people believe that it is helpful to view a challenging situation as an opportunity for personal growth. Others believe that reimagining challenging situations this way occupies too much of the focus one needs to face challenges effectively.",
+      "instruction": "Write a response in which you discuss which view more closely aligns with your own position and explain your reasoning for the position you take. In developing and supporting your position, you should address both of the views presented.",
+      "variant": "two_views",
+      "variant_summary": "Choose between two opposing views and defend the choice.",
+      "required_moves": [
+        "Say which of the two views is closer to your own position.",
+        "Address BOTH views -- ignoring the rejected view is the standard failure here.",
+        "Explain the reasoning behind the choice."
+      ]
+    },
+    {
+      "id": "issue_86e86daf7b",
+      "statement": "Some people believe that traveling to and living in numerous places increases one's ability to relate and connect to other people. Others believe that this ability is better cultivated by living in one place and developing a deep understanding of that community.",
+      "instruction": "Write a response in which you discuss which view more closely aligns with your own position and explain your reasoning for the position you take. In developing and supporting your position, you should address both of the views presented.",
+      "variant": "two_views",
+      "variant_summary": "Choose between two opposing views and defend the choice.",
+      "required_moves": [
+        "Say which of the two views is closer to your own position.",
+        "Address BOTH views -- ignoring the rejected view is the standard failure here.",
+        "Explain the reasoning behind the choice."
+      ]
+    },
+    {
+      "id": "issue_15ca613e3c",
+      "statement": "Claim: Young people's tendency to make extensive use of portable devices like smartphones and tablets has hurt their development of social skills. Reason: These devices encourage users to form artificial personalities and relationships online rather than fully and honestly engaging with the people around them.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the claim and the reason on which that claim is based.",
+      "variant": "claim_and_reason",
+      "variant_summary": "Agree/disagree with BOTH the claim and the reason offered for it.",
+      "required_moves": [
+        "State a position on the claim.",
+        "State a separate position on the reason -- a claim can be right for the wrong reason.",
+        "Address the logical link between reason and claim explicitly."
+      ]
+    },
+    {
+      "id": "issue_84ca6bbfc3",
+      "statement": "Claim: When one is making a decision, it is better to have a limited number of options. Reason: The more options a person has, the more difficult it is to make a rational decision.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the claim and the reason on which that claim is based.",
+      "variant": "claim_and_reason",
+      "variant_summary": "Agree/disagree with BOTH the claim and the reason offered for it.",
+      "required_moves": [
+        "State a position on the claim.",
+        "State a separate position on the reason -- a claim can be right for the wrong reason.",
+        "Address the logical link between reason and claim explicitly."
+      ]
+    },
+    {
+      "id": "issue_6df32d7704",
+      "statement": "Because people increasingly feel compelled to share their personal details online, the right to privacy is eroding.",
+      "instruction": "Write a response in which you discuss the extent to which you agree or disagree with the claim. In developing and supporting your position, be sure to address the most compelling reasons and/or examples that could be used to challenge your position.",
+      "variant": "claim_challenge",
+      "variant_summary": "Agree/disagree with the claim, and confront the strongest case against you.",
+      "required_moves": [
+        "State a position on the claim.",
+        "Raise the most compelling reasons or examples that could challenge that position.",
+        "Answer those challenges rather than merely acknowledging them."
+      ]
+    }
+  ]
+}

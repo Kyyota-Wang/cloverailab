@@ -1,0 +1,425 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GRE AWA — Issue 作文助手</title>
+<style>
+  :root {
+    --bg: #faf9f7; --panel: #fff; --ink: #1c1b19; --muted: #6b6862;
+    --line: #e3e0da; --accent: #8a5a3c; --accent-soft: #f2e9e3;
+    --good: #2d6a4f; --warn: #9a6700; --bad: #a4343a;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #16151a; --panel: #1e1d23; --ink: #eceaf0; --muted: #9c98a6;
+      --line: #322f3a; --accent: #d9a07a; --accent-soft: #2a2229;
+      --good: #6fbf95; --warn: #d6a53a; --bad: #e4767c;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font: 15px/1.65 ui-sans-serif, system-ui, "Segoe UI", "Microsoft YaHei", sans-serif;
+  }
+  header {
+    padding: 20px 24px; border-bottom: 1px solid var(--line);
+    display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap;
+  }
+  h1 { font-size: 17px; margin: 0; font-weight: 650; }
+  .sub { color: var(--muted); font-size: 13px; }
+  main { max-width: 1180px; margin: 0 auto; padding: 22px 24px 80px; }
+  .tabs { display: flex; gap: 6px; margin-bottom: 20px; }
+  .tab {
+    padding: 8px 16px; border: 1px solid var(--line); background: transparent;
+    color: var(--muted); border-radius: 7px; cursor: pointer; font-size: 14px;
+    font-family: inherit;
+  }
+  .tab[aria-selected="true"] { background: var(--accent-soft); color: var(--ink); border-color: var(--accent); }
+  .grid { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1.15fr); gap: 20px; }
+  @media (max-width: 940px) { .grid { grid-template-columns: 1fr; } }
+  .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 18px; }
+  label { display: block; font-size: 13px; font-weight: 600; margin: 14px 0 6px; }
+  label:first-child { margin-top: 0; }
+  select, textarea, input, button {
+    width: 100%; font-family: inherit; font-size: 14px; color: var(--ink);
+    background: var(--bg); border: 1px solid var(--line); border-radius: 7px; padding: 9px 11px;
+  }
+  textarea { resize: vertical; line-height: 1.6; }
+  button.primary {
+    background: var(--accent); color: #fff; border: none; font-weight: 600;
+    cursor: pointer; padding: 11px; margin-top: 16px;
+  }
+  button.primary:disabled { opacity: .55; cursor: not-allowed; }
+  .row { display: flex; gap: 10px; }
+  .row > * { flex: 1; }
+  .hint { font-size: 12px; color: var(--muted); margin-top: 5px; }
+  .moves { background: var(--accent-soft); border-radius: 7px; padding: 11px 13px; margin-top: 10px; font-size: 13px; }
+  .moves ol { margin: 6px 0 0; padding-left: 20px; }
+  .moves li { margin: 3px 0; }
+  .variant-tag {
+    display: inline-block; background: var(--accent); color: #fff; font-size: 11px;
+    padding: 2px 8px; border-radius: 20px; font-weight: 600; letter-spacing: .02em;
+  }
+  .score-block { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: 4px; }
+  .score { font-size: 40px; font-weight: 700; line-height: 1; }
+  .range { color: var(--muted); font-size: 13px; }
+  .axis { display: grid; grid-template-columns: 128px 34px 1fr; gap: 10px; align-items: start;
+          padding: 9px 0; border-top: 1px solid var(--line); font-size: 13px; }
+  .axis b { font-weight: 600; }
+  .axis .n { font-weight: 700; color: var(--accent); }
+  .axis .why { color: var(--muted); }
+  .check { padding: 7px 0; border-top: 1px solid var(--line); font-size: 13px; display: flex; gap: 9px; }
+  .yes { color: var(--good); font-weight: 700; }
+  .no { color: var(--bad); font-weight: 700; }
+  .sug { border-left: 3px solid var(--accent); padding: 4px 0 4px 12px; margin: 12px 0; font-size: 13px; }
+  .sug .fix { margin-top: 4px; }
+  .sug .ex { margin-top: 6px; padding: 8px 10px; background: var(--accent-soft); border-radius: 6px; font-style: italic; }
+  .essay { white-space: pre-wrap; line-height: 1.75; font-size: 14.5px; }
+  .commentary { line-height: 1.7; font-size: 14px; }
+  h3 { font-size: 13px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted);
+       margin: 22px 0 10px; font-weight: 650; }
+  h3:first-child { margin-top: 0; }
+  .status { padding: 14px; text-align: center; color: var(--muted); font-size: 13.5px; }
+  .err { color: var(--bad); padding: 12px; border: 1px solid var(--bad); border-radius: 7px; font-size: 13.5px; }
+  .meta { font-size: 11.5px; color: var(--muted); margin-top: 18px; padding-top: 10px; border-top: 1px solid var(--line); }
+  .disclosure { background: var(--accent-soft); border-radius: 7px; padding: 10px 13px; font-size: 12.5px;
+                color: var(--muted); margin-top: 12px; line-height: 1.55; }
+  .chat { margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--line); }
+  .bubble { padding: 9px 12px; border-radius: 8px; margin: 8px 0; font-size: 13.5px; white-space: pre-wrap; }
+  .bubble.q { background: var(--accent-soft); }
+  .bubble.a { background: var(--bg); border: 1px solid var(--line); }
+  .signals { font-size: 12.5px; color: var(--muted); white-space: pre-wrap; line-height: 1.7; }
+  .hidden { display: none; }
+</style>
+</head>
+<body>
+<header>
+  <h1>GRE AWA — Analyze an Issue</h1>
+  <span class="sub">158 道官方题 · ETS 评分标准 · 18 篇官方范文校准</span>
+</header>
+
+<main>
+  <div class="tabs" role="tablist">
+    <button class="tab" role="tab" aria-selected="true" data-tab="review">批改我的作文</button>
+    <button class="tab" role="tab" aria-selected="false" data-tab="write">生成范文</button>
+  </div>
+
+  <div class="grid">
+    <div class="panel">
+      <label for="topic">题目</label>
+      <select id="topic"></select>
+      <div class="hint">158 道 ETS 官方题库。选「— 自定义题目 —」可粘贴任意题目（批改和生成都支持）。</div>
+
+      <div id="custom" class="hidden">
+        <label for="stmt">题目陈述</label>
+        <textarea id="stmt" rows="3"></textarea>
+        <label for="instr">任务指令（"Write a response in which..." 那段）</label>
+        <textarea id="instr" rows="3" placeholder="Write a response in which you discuss..."></textarea>
+        <div class="hint">指令决定了这道题要求你做哪些动作，必须提供。六种官方变体会自动识别。</div>
+      </div>
+
+      <div id="moves" class="moves hidden"></div>
+
+      <div id="reviewPane">
+        <label for="essay">你的作文</label>
+        <textarea id="essay" rows="15" placeholder="把作文粘贴到这里…"></textarea>
+        <button class="primary" id="goReview">批改</button>
+      </div>
+
+      <div id="writePane" class="hidden">
+        <div class="row">
+          <div>
+            <label for="target">目标分数</label>
+            <select id="target">
+              <option value="6">6.0 — 满分范文</option>
+              <option value="5">5.0</option>
+              <option value="4">4.0 — 用来对比差距</option>
+              <option value="3">3.0</option>
+            </select>
+          </div>
+        </div>
+        <label for="guidance">附加要求（可选）</label>
+        <input id="guidance" placeholder="例如：反对这个观点；用科学史的例子">
+        <button class="primary" id="goWrite">生成</button>
+      </div>
+
+      <div class="meta">评分需 60–90 秒（模型在做完整的分档推理）。生成范文约 40–70 秒。</div>
+    </div>
+
+    <div class="panel" id="out">
+      <div class="status">选好题目，贴上作文，然后点批改。</div>
+    </div>
+  </div>
+</main>
+
+<script type="module">
+const $ = (id) => document.getElementById(id);
+let TOPICS = [];
+let mode = "review";
+let lastContext = "";
+
+const esc = (s) => String(s ?? "").replace(/[&<>]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" }[c]));
+
+async function loadTopics() {
+  const res = await fetch("/api/topics");
+  const data = await res.json();
+  TOPICS = data.topics;
+  const sel = $("topic");
+  sel.innerHTML =
+    '<option value="">— 自定义题目 —</option>' +
+    TOPICS.map((t, i) => `<option value="${i}">[${t.variant}] ${esc(t.statement.slice(0, 95))}${t.statement.length > 95 ? "…" : ""}</option>`).join("");
+  sel.value = "0";
+  onTopicChange();
+}
+
+function currentPrompt() {
+  const v = $("topic").value;
+  if (v === "") {
+    return { statement: $("stmt").value.trim(), instruction: $("instr").value.trim() };
+  }
+  const t = TOPICS[Number(v)];
+  return { statement: t.statement, instruction: t.instruction };
+}
+
+function showMoves(variant, summary, moves) {
+  const box = $("moves");
+  box.classList.remove("hidden");
+  box.innerHTML =
+    `<span class="variant-tag">${esc(variant)}</span> ${esc(summary)}` +
+    `<ol>${moves.map((m) => `<li>${esc(m)}</li>`).join("")}</ol>`;
+}
+
+/**
+ * Resolve a pasted prompt as the user types.
+ *
+ * Free and instant (no model call). Without this, a custom prompt whose
+ * instruction cannot be classified only fails after the user has waited for a
+ * generation -- and a prompt that IS classified never shows what it was
+ * classified as, which is the single most important thing to get right.
+ */
+let resolveTimer = null;
+async function resolveCustom() {
+  const statement = $("stmt").value.trim();
+  const instruction = $("instr").value.trim();
+  const box = $("moves");
+  if (!statement && !instruction) { box.classList.add("hidden"); return; }
+  try {
+    const data = await post("/api/resolve", { statement, instruction });
+    showMoves(data.prompt.variant, data.variantSummary, data.prompt.requiredMoves);
+  } catch (e) {
+    box.classList.remove("hidden");
+    box.innerHTML = `<b style="color:var(--bad)">无法识别任务指令</b>
+      <div style="margin-top:6px">${esc(e.message)}</div>`;
+  }
+}
+
+function onTopicChange() {
+  const v = $("topic").value;
+  $("custom").classList.toggle("hidden", v !== "");
+  if (v === "") { resolveCustom(); return; }
+  const t = TOPICS[Number(v)];
+  showMoves(t.variant, t.variantSummary, t.requiredMoves);
+}
+
+function setMode(next) {
+  mode = next;
+  document.querySelectorAll(".tab").forEach((b) => b.setAttribute("aria-selected", String(b.dataset.tab === next)));
+  $("reviewPane").classList.toggle("hidden", next !== "review");
+  $("writePane").classList.toggle("hidden", next !== "write");
+  $("out").innerHTML = `<div class="status">${next === "review" ? "选好题目，贴上作文，然后点批改。" : "选一道题和目标分数，然后点生成。"}</div>`;
+}
+
+async function post(path, body) {
+  const res = await fetch(path, {
+    method: "POST",
+    headers: { "content-type": "application/json" },
+    body: JSON.stringify(body),
+  });
+  const data = await res.json();
+  if (!res.ok) throw new Error(data.error || `请求失败 (${res.status})`);
+  return data;
+}
+
+// The free, instant half of the reviewer. Shown while the model call runs, so
+// the user sees real analysis rather than a spinner for a minute and a half.
+async function showPrecheck(prompt, essay) {
+  try {
+    const data = await post("/api/precheck", { ...prompt, essay });
+    const p = data.precheck;
+    const flagText = p.flags.length ? `<span class="no">${p.flags.join(", ")}</span>` : `<span class="yes">无</span>`;
+    $("out").innerHTML = `
+      <h3>即时分析（不调用模型，无成本）</h3>
+      <div class="signals">${esc(data.formatted)}</div>
+      <div style="margin-top:10px;font-size:13px">机械标记：${flagText}</div>
+      <div class="status" style="margin-top:22px">⏳ 模型正在按 ETS 评分标准逐轴取证并与 18 篇官方范文对比…<br>通常 60–90 秒。</div>`;
+  } catch (e) {
+    $("out").innerHTML = `<div class="err">${esc(e.message)}</div>`;
+    throw e;
+  }
+}
+
+function renderReview(d) {
+  const r = d.review;
+  const axisNames = { position: "立场与任务", development: "论证展开", organization: "结构组织", language: "语言表达", conventions: "语法规范" };
+  const moves = r.compliance.moves.map((m) =>
+    `<div class="check"><span class="${m.addressed ? "yes" : "no"}">${m.addressed ? "✓" : "✗"}</span>
+     <div><b>${esc(m.move)}</b><div class="axis why">${esc(m.evidence)}</div></div></div>`).join("");
+  const axes = r.axisAssessments.map((a) =>
+    `<div class="axis"><b>${esc(axisNames[a.axis] || a.axis)}</b><span class="n">${a.score}</span>
+     <div><div>${esc(a.evidence)}</div><div class="why">${esc(a.reasoning)}</div></div></div>`).join("");
+  const sugs = r.suggestions.map((s) =>
+    `<div class="sug"><b>${s.priority}. ${esc(s.problem)}</b>
+     <div class="fix">${esc(s.fix)}</div>${s.example ? `<div class="ex">${esc(s.example)}</div>` : ""}</div>`).join("");
+
+  $("out").innerHTML = `
+    <h3>任务合规性</h3>
+    <div style="font-size:13px;color:var(--muted);margin-bottom:6px">
+      这道题（${esc(r.compliance.variant)}）要求的动作是否做到了：</div>
+    ${moves}
+
+    <h3>逐轴评分</h3>${axes}
+
+    <h3>参考分数</h3>
+    <div class="score-block">
+      <span class="score">${r.holisticScore.toFixed(1)}</span>
+      <span class="range">置信区间 ${r.confidenceRange[0].toFixed(1)} – ${r.confidenceRange[1].toFixed(1)}</span>
+    </div>
+    <div class="disclosure">
+      ⚠️ <b>分数仅供参考，且已知偏严。</b> 在 26 篇有人工评分的作文上实测，平均比真人评分低
+      0.5–0.8 分，高分段压缩尤其明显（真实 6 分的作文通常只给到 4.5–5）。
+      <b>请以上面的合规性检查和逐轴取证为准</b>——那部分不依赖分数校准。
+    </div>
+
+    <h3>评语</h3>
+    <div class="commentary">${esc(r.raterCommentary)}</div>
+
+    <h3>最高杠杆的修改</h3>${sugs}
+
+    <div class="chat">
+      <label for="q">追问</label>
+      <div class="row">
+        <input id="q" placeholder="例如：为什么说我的让步段没有真正回应反方？">
+        <button class="primary" id="ask" style="flex:0 0 90px;margin-top:0">问</button>
+      </div>
+      <div id="thread"></div>
+    </div>
+
+    <div class="meta">${esc(d.usage.model)} · 输出 ${d.usage.outputTokens} tokens ·
+      缓存命中 ${d.usage.cachedInputTokens.toLocaleString()} · 本次约 $${d.estimatedCostUsd.toFixed(3)}</div>`;
+
+  lastContext = `THE PROMPT\n${d.prompt.statement}\n\nTASK INSTRUCTION\n${d.prompt.instruction}\n\n` +
+    `THE ESSAY\n${$("essay").value}\n\nTHE ASSESSMENT\n${JSON.stringify(r, null, 2)}`;
+  wireChat();
+}
+
+function renderWrite(d) {
+  const paras = d.plan.bodyParagraphs.map((p) =>
+    `<div class="sug"><b>${esc(p.claim)}</b><div class="fix">例证：${esc(p.example)}</div>
+     <div class="axis why">作用：${esc(p.role)}</div></div>`).join("");
+
+  $("out").innerHTML = `
+    <h3>写作计划</h3>
+    <div style="font-size:13.5px"><b>立场：</b>${esc(d.plan.position)}</div>
+    <div style="font-size:13.5px;margin-top:8px"><b>让步与回应：</b>${esc(d.plan.concession)}</div>
+    <div style="margin-top:10px">${paras}</div>
+
+    <h3>范文（目标 ${d.notes.targetScore} 分，${d.wordCount} 词）</h3>
+    <div class="essay">${esc(d.essay)}</div>
+
+    <h3>为什么这是 ${d.notes.targetScore} 分</h3>
+    <div class="commentary">${esc(d.notes.whyThisScores)}</div>
+
+    <h3>${d.notes.targetScore >= 6 ? "6 分与 5 分的分界" : "要再高一档还差什么"}</h3>
+    <div class="commentary">${esc(d.notes.ifAimingHigher)}</div>
+
+    <div class="disclosure">
+      ⚠️ 范文中的事实性例证（人名、年份、数据）请自行核实后再使用。模型可能记错细节。
+    </div>
+
+    <div class="chat">
+      <label for="q">追问</label>
+      <div class="row">
+        <input id="q" placeholder="例如：第三段为什么用航空业的例子？">
+        <button class="primary" id="ask" style="flex:0 0 90px;margin-top:0">问</button>
+      </div>
+      <div id="thread"></div>
+    </div>
+
+    <div class="meta">${esc(d.usage.model)} · 输出 ${d.usage.outputTokens} tokens ·
+      缓存命中 ${d.usage.cachedInputTokens.toLocaleString()} · 本次约 $${d.estimatedCostUsd.toFixed(3)}</div>`;
+
+  lastContext = `THE PROMPT\n${d.prompt.statement}\n\nTASK INSTRUCTION\n${d.prompt.instruction}\n\n` +
+    `THE PLAN\n${JSON.stringify(d.plan, null, 2)}\n\nTHE ESSAY\n${d.essay}\n\nNOTES\n${JSON.stringify(d.notes, null, 2)}`;
+  wireChat();
+}
+
+function wireChat() {
+  const ask = $("ask"), q = $("q"), thread = $("thread");
+  if (!ask) return;
+  const send = async () => {
+    const question = q.value.trim();
+    if (!question) return;
+    q.value = "";
+    thread.insertAdjacentHTML("beforeend", `<div class="bubble q">${esc(question)}</div>`);
+    const slot = document.createElement("div");
+    slot.className = "bubble a";
+    slot.textContent = "…";
+    thread.appendChild(slot);
+    try {
+      const data = await post("/api/chat", { context: lastContext, question });
+      slot.textContent = data.answer;
+    } catch (e) {
+      slot.className = "err";
+      slot.textContent = e.message;
+    }
+  };
+  ask.onclick = send;
+  q.onkeydown = (e) => { if (e.key === "Enter") send(); };
+}
+
+$("topic").onchange = onTopicChange;
+for (const id of ["stmt", "instr"]) {
+  $(id).oninput = () => {
+    clearTimeout(resolveTimer);
+    resolveTimer = setTimeout(resolveCustom, 400);
+  };
+}
+document.querySelectorAll(".tab").forEach((b) => (b.onclick = () => setMode(b.dataset.tab)));
+
+$("goReview").onclick = async () => {
+  const prompt = currentPrompt();
+  const essay = $("essay").value.trim();
+  if (!prompt.statement) return alert("请先选择或填写题目。");
+  if (!essay) return alert("请贴上作文。");
+  const btn = $("goReview");
+  btn.disabled = true;
+  try {
+    await showPrecheck(prompt, essay);
+    renderReview(await post("/api/review", { ...prompt, essay }));
+  } catch (e) {
+    $("out").innerHTML = `<div class="err">${esc(e.message)}</div>`;
+  } finally {
+    btn.disabled = false;
+  }
+};
+
+$("goWrite").onclick = async () => {
+  const prompt = currentPrompt();
+  if (!prompt.statement) return alert("请先选择或填写题目。");
+  const btn = $("goWrite");
+  btn.disabled = true;
+  $("out").innerHTML = `<div class="status">⏳ 正在规划并写作（先出提纲，再成文）…<br>通常 40–70 秒。</div>`;
+  try {
+    renderWrite(await post("/api/write", { ...prompt, targetScore: Number($("target").value), guidance: $("guidance").value.trim() }));
+  } catch (e) {
+    $("out").innerHTML = `<div class="err">${esc(e.message)}</div>`;
+  } finally {
+    btn.disabled = false;
+  }
+};
+
+loadTopics();
+</script>
+</body>
+</html>

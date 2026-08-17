@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <title>CloverAI Lab</title>
+  <style>
+    .leaf { fill: #2e9a5b }
+    @media (prefers-color-scheme: dark) { .leaf { fill: #4ed68c } }
+  </style>
+  <mask id="lines" maskUnits="userSpaceOnUse" x="0" y="0" width="200" height="200">
+    <rect width="200" height="200" fill="#fff"/>
+    <g fill="none" stroke="#000" stroke-width="13" stroke-linecap="round">
+      <path d="M132,48 H164"/>
+      <path d="M132,64 H152"/>
+    </g>
+  </mask>
+  <g class="leaf" mask="url(#lines)">
+    <g transform="translate(100,100) scale(0.95) translate(-100,-100)">
+      <g transform="translate(-5,-5)"><path d="M100,54 A46,46 0 1,0 54,100 L100,100 Z"/></g>
+      <g transform="rotate(90 100 100)"><g transform="translate(-5,-5)"><path d="M100,54 A46,46 0 1,0 54,100 L100,100 Z"/></g></g>
+      <g transform="rotate(180 100 100)"><g transform="translate(-5,-5)"><path d="M100,54 A46,46 0 1,0 54,100 L100,100 Z"/></g></g>
+      <g transform="rotate(270 100 100)"><g transform="translate(-5,-5)"><path d="M100,54 A46,46 0 1,0 54,100 L100,100 Z"/></g></g>
+    </g>
+  </g>
+</svg>

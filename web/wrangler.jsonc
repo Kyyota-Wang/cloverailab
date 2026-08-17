@@ -1,0 +1,14 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "gre-awa",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-08-01",
+  "compatibility_flags": ["nodejs_compat"],
+  // The frontend is a Vite build (source in web/app). Run `npm run build`
+  // before `wrangler dev` or `wrangler deploy` -- both npm scripts already do.
+  "assets": { "directory": "./dist", "binding": "ASSETS" },
+  "observability": { "enabled": true }
+  // Secrets are NOT set here. Set them once with:
+  //   npx wrangler secret put ANTHROPIC_API_KEY
+  // For local `wrangler dev`, put them in web/.dev.vars instead (gitignored).
+}

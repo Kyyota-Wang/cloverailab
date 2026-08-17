@@ -1,0 +1,476 @@
+{
+  "provider": "anthropic",
+  "model": "claude-sonnet-5",
+  "options": {
+    "samples": 1,
+    "leaveOneOut": true
+  },
+  "metrics": {
+    "all": {
+      "n": 26,
+      "bias": -0.481,
+      "meanAbsoluteError": 0.75,
+      "agreementWithinHalf": 0.5,
+      "agreementWithinOne": 0.808,
+      "exactAgreement": 0.192,
+      "quadraticWeightedKappa": 0.774,
+      "meanSampleSpread": 0,
+      "worstMisses": [
+        {
+          "id": "sample_issue_score5",
+          "trueScore": 5,
+          "predictedScore": 3.5,
+          "error": -1.5
+        },
+        {
+          "id": "practice_test_1_score6",
+          "trueScore": 6,
+          "predictedScore": 4.5,
+          "error": -1.5
+        },
+        {
+          "id": "practice_test_1_score5",
+          "trueScore": 5,
+          "predictedScore": 3.5,
+          "error": -1.5
+        },
+        {
+          "id": "magoosh_awa_issue_essay_strategies_2",
+          "trueScore": 5,
+          "predictedScore": 3.5,
+          "error": -1.5
+        },
+        {
+          "id": "magoosh_awa_issue_essay_strategies_3",
+          "trueScore": 4.5,
+          "predictedScore": 3,
+          "error": -1.5
+        }
+      ]
+    },
+    "official": {
+      "n": 18,
+      "bias": -0.333,
+      "meanAbsoluteError": 0.722,
+      "agreementWithinHalf": 0.5,
+      "agreementWithinOne": 0.833,
+      "exactAgreement": 0.222,
+      "quadraticWeightedKappa": 0.825,
+      "meanSampleSpread": 0,
+      "worstMisses": [
+        {
+          "id": "sample_issue_score5",
+          "trueScore": 5,
+          "predictedScore": 3.5,
+          "error": -1.5
+        },
+        {
+          "id": "practice_test_1_score6",
+          "trueScore": 6,
+          "predictedScore": 4.5,
+          "error": -1.5
+        },
+        {
+          "id": "practice_test_1_score5",
+          "trueScore": 5,
+          "predictedScore": 3.5,
+          "error": -1.5
+        },
+        {
+          "id": "sample_issue_score6",
+          "trueScore": 6,
+          "predictedScore": 5,
+          "error": -1
+        },
+        {
+          "id": "sample_issue_score4",
+          "trueScore": 4,
+          "predictedScore": 3,
+          "error": -1
+        }
+      ]
+    },
+    "teacher": {
+      "n": 8,
+      "bias": -0.812,
+      "meanAbsoluteError": 0.813,
+      "agreementWithinHalf": 0.5,
+      "agreementWithinOne": 0.75,
+      "exactAgreement": 0.125,
+      "quadraticWeightedKappa": 0.448,
+      "meanSampleSpread": 0,
+      "worstMisses": [
+        {
+          "id": "magoosh_awa_issue_essay_strategies_2",
+          "trueScore": 5,
+          "predictedScore": 3.5,
+          "error": -1.5
+        },
+        {
+          "id": "magoosh_awa_issue_essay_strategies_3",
+          "trueScore": 4.5,
+          "predictedScore": 3,
+          "error": -1.5
+        },
+        {
+          "id": "magoosh_awa_issue_essay_strategies_1",
+          "trueScore": 5.5,
+          "predictedScore": 4.5,
+          "error": -1
+        },
+        {
+          "id": "magoosh_awa_issue_essay_strategies_8",
+          "trueScore": 4,
+          "predictedScore": 3,
+          "error": -1
+        },
+        {
+          "id": "magoosh_awa_issue_essay_strategies_4",
+          "trueScore": 4,
+          "predictedScore": 3.5,
+          "error": -0.5
+        }
+      ]
+    }
+  },
+  "ladders": [
+    {
+      "name": "sample_issue",
+      "correctlyOrdered": false,
+      "pairwiseAccuracy": 0.867,
+      "scores": [
+        {
+          "trueScore": 1,
+          "predictedScore": 1
+        },
+        {
+          "trueScore": 2,
+          "predictedScore": 2.5
+        },
+        {
+          "trueScore": 3,
+          "predictedScore": 4
+        },
+        {
+          "trueScore": 4,
+          "predictedScore": 3
+        },
+        {
+          "trueScore": 5,
+          "predictedScore": 3.5
+        },
+        {
+          "trueScore": 6,
+          "predictedScore": 5
+        }
+      ]
+    },
+    {
+      "name": "practice_test_1",
+      "correctlyOrdered": true,
+      "pairwiseAccuracy": 0.933,
+      "scores": [
+        {
+          "trueScore": 1,
+          "predictedScore": 2
+        },
+        {
+          "trueScore": 2,
+          "predictedScore": 2
+        },
+        {
+          "trueScore": 3,
+          "predictedScore": 3
+        },
+        {
+          "trueScore": 4,
+          "predictedScore": 3.5
+        },
+        {
+          "trueScore": 5,
+          "predictedScore": 3.5
+        },
+        {
+          "trueScore": 6,
+          "predictedScore": 4.5
+        }
+      ]
+    },
+    {
+      "name": "practice_test_3",
+      "correctlyOrdered": false,
+      "pairwiseAccuracy": 0.9,
+      "scores": [
+        {
+          "trueScore": 1,
+          "predictedScore": 1.5
+        },
+        {
+          "trueScore": 2,
+          "predictedScore": 2.5
+        },
+        {
+          "trueScore": 3,
+          "predictedScore": 2
+        },
+        {
+          "trueScore": 4,
+          "predictedScore": 4
+        },
+        {
+          "trueScore": 5,
+          "predictedScore": 4
+        },
+        {
+          "trueScore": 6,
+          "predictedScore": 5.5
+        }
+      ]
+    }
+  ],
+  "usage": {
+    "input": 29098,
+    "cached": 195769,
+    "cacheWrite": 509470,
+    "output": 238047,
+    "totalInput": 734337,
+    "cacheHitRate": 0.26659285859217224
+  },
+  "predictions": [
+    {
+      "id": "sample_issue_score6",
+      "trueScore": 6,
+      "predictedScore": 5,
+      "labelSource": "ets_official",
+      "samples": [
+        5
+      ]
+    },
+    {
+      "id": "sample_issue_score5",
+      "trueScore": 5,
+      "predictedScore": 3.5,
+      "labelSource": "ets_official",
+      "samples": [
+        3.5
+      ]
+    },
+    {
+      "id": "sample_issue_score4",
+      "trueScore": 4,
+      "predictedScore": 3,
+      "labelSource": "ets_official",
+      "samples": [
+        3
+      ]
+    },
+    {
+      "id": "sample_issue_score3",
+      "trueScore": 3,
+      "predictedScore": 4,
+      "labelSource": "ets_official",
+      "samples": [
+        4
+      ]
+    },
+    {
+      "id": "sample_issue_score2",
+      "trueScore": 2,
+      "predictedScore": 2.5,
+      "labelSource": "ets_official",
+      "samples": [
+        2.5
+      ]
+    },
+    {
+      "id": "sample_issue_score1",
+      "trueScore": 1,
+      "predictedScore": 1,
+      "labelSource": "ets_official",
+      "samples": [
+        1
+      ]
+    },
+    {
+      "id": "practice_test_1_score6",
+      "trueScore": 6,
+      "predictedScore": 4.5,
+      "labelSource": "ets_official",
+      "samples": [
+        4.5
+      ]
+    },
+    {
+      "id": "practice_test_1_score5",
+      "trueScore": 5,
+      "predictedScore": 3.5,
+      "labelSource": "ets_official",
+      "samples": [
+        3.5
+      ]
+    },
+    {
+      "id": "practice_test_1_score4",
+      "trueScore": 4,
+      "predictedScore": 3.5,
+      "labelSource": "ets_official",
+      "samples": [
+        3.5
+      ]
+    },
+    {
+      "id": "practice_test_1_score3",
+      "trueScore": 3,
+      "predictedScore": 3,
+      "labelSource": "ets_official",
+      "samples": [
+        3
+      ]
+    },
+    {
+      "id": "practice_test_1_score2",
+      "trueScore": 2,
+      "predictedScore": 2,
+      "labelSource": "ets_official",
+      "samples": [
+        2
+      ]
+    },
+    {
+      "id": "practice_test_1_score1",
+      "trueScore": 1,
+      "predictedScore": 2,
+      "labelSource": "ets_official",
+      "samples": [
+        2
+      ]
+    },
+    {
+      "id": "practice_test_3_score6",
+      "trueScore": 6,
+      "predictedScore": 5.5,
+      "labelSource": "ets_official",
+      "samples": [
+        5.5
+      ]
+    },
+    {
+      "id": "practice_test_3_score5",
+      "trueScore": 5,
+      "predictedScore": 4,
+      "labelSource": "ets_official",
+      "samples": [
+        4
+      ]
+    },
+    {
+      "id": "practice_test_3_score4",
+      "trueScore": 4,
+      "predictedScore": 4,
+      "labelSource": "ets_official",
+      "samples": [
+        4
+      ]
+    },
+    {
+      "id": "practice_test_3_score3",
+      "trueScore": 3,
+      "predictedScore": 2,
+      "labelSource": "ets_official",
+      "samples": [
+        2
+      ]
+    },
+    {
+      "id": "practice_test_3_score2",
+      "trueScore": 2,
+      "predictedScore": 2.5,
+      "labelSource": "ets_official",
+      "samples": [
+        2.5
+      ]
+    },
+    {
+      "id": "practice_test_3_score1",
+      "trueScore": 1,
+      "predictedScore": 1.5,
+      "labelSource": "ets_official",
+      "samples": [
+        1.5
+      ]
+    },
+    {
+      "id": "magoosh_awa_issue_essay_strategies_1",
+      "trueScore": 5.5,
+      "predictedScore": 4.5,
+      "labelSource": "teacher_rated",
+      "samples": [
+        4.5
+      ]
+    },
+    {
+      "id": "magoosh_awa_issue_essay_strategies_2",
+      "trueScore": 5,
+      "predictedScore": 3.5,
+      "labelSource": "teacher_rated",
+      "samples": [
+        3.5
+      ]
+    },
+    {
+      "id": "magoosh_awa_issue_essay_strategies_3",
+      "trueScore": 4.5,
+      "predictedScore": 3,
+      "labelSource": "teacher_rated",
+      "samples": [
+        3
+      ]
+    },
+    {
+      "id": "magoosh_awa_issue_essay_strategies_4",
+      "trueScore": 4,
+      "predictedScore": 3.5,
+      "labelSource": "teacher_rated",
+      "samples": [
+        3.5
+      ]
+    },
+    {
+      "id": "magoosh_awa_issue_essay_strategies_5",
+      "trueScore": 3,
+      "predictedScore": 3,
+      "labelSource": "teacher_rated",
+      "samples": [
+        3
+      ]
+    },
+    {
+      "id": "magoosh_awa_issue_essay_strategies_6",
+      "trueScore": 4,
+      "predictedScore": 3.5,
+      "labelSource": "teacher_rated",
+      "samples": [
+        3.5
+      ]
+    },
+    {
+      "id": "magoosh_awa_issue_essay_strategies_7",
+      "trueScore": 3,
+      "predictedScore": 2.5,
+      "labelSource": "teacher_rated",
+      "samples": [
+        2.5
+      ]
+    },
+    {
+      "id": "magoosh_awa_issue_essay_strategies_8",
+      "trueScore": 4,
+      "predictedScore": 3,
+      "labelSource": "teacher_rated",
+      "samples": [
+        3
+      ]
+    }
+  ],
+  "failures": []
+}

@@ -1,0 +1,209 @@
+/*
+ * Design tokens.
+ *
+ * Two themes, one set of names. `prefers-color-scheme` picks the default;
+ * `data-theme` on <html> overrides it in both directions, so the explicit
+ * toggle always wins.
+ *
+ * The brand green is derived from the clover mark: --clover-500 is the mark's
+ * own colour, and everything accent-coloured is a step on that ramp rather
+ * than an unrelated hue. The neutrals carry a slight green cast for the same
+ * reason -- a pure grey next to this green reads cold.
+ */
+
+:root {
+  --clover-50: #edf9f1;
+  --clover-100: #d5f0e0;
+  --clover-200: #a9e2c1;
+  --clover-300: #79d09f;
+  --clover-400: #52c383;
+  --clover-500: #3bb86e;
+  --clover-600: #2e9a5b;
+  --clover-700: #257a49;
+  --clover-800: #1d6b41;
+  --clover-900: #15442a;
+
+  --bg: #fafbfa;
+  --bg-sunken: #f2f5f3;
+  --surface: #ffffff;
+  --surface-2: #f5f8f6;
+  --surface-3: #eef2ef;
+
+  --ink: #0f1a15;
+  --ink-2: #55665d;
+  --ink-3: #85958c;
+
+  --line: #e3e9e5;
+  --line-2: #d2dbd6;
+  --line-3: #b9c5be;
+
+  --accent: var(--clover-600);
+  --accent-ink: var(--clover-800);
+  --accent-tint: var(--clover-50);
+  --accent-line: var(--clover-200);
+  --on-accent: #ffffff;
+
+  --ok: #2e9a5b;
+  --ok-tint: #edf9f1;
+  --ok-line: #a9e2c1;
+
+  --warn: #a8720c;
+  --warn-tint: #fdf5e5;
+  --warn-line: #ecd7a5;
+
+  --risk: #b23c31;
+  --risk-tint: #fdeeec;
+  --risk-line: #f0c3bd;
+
+  --shadow-1: 0 1px 2px rgb(16 32 24 / 0.05);
+  --shadow-2: 0 6px 20px -8px rgb(16 32 24 / 0.16), 0 1px 3px rgb(16 32 24 / 0.06);
+
+  --font-ui: "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system,
+    "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei UI", sans-serif;
+  --font-read: "Iowan Old Style", "Palatino Linotype", Palatino, "Source Serif 4",
+    Georgia, "Songti SC", "SimSun", serif;
+  --font-mono: ui-monospace, "Cascadia Mono", "SF Mono", Menlo, Consolas, monospace;
+
+  --t-xs: 0.75rem;
+  --t-sm: 0.8125rem;
+  --t-base: 0.9375rem;
+  --t-md: 1rem;
+  --t-lg: clamp(1.0625rem, 0.98rem + 0.4vw, 1.1875rem);
+  --t-xl: clamp(1.25rem, 1.1rem + 0.7vw, 1.5rem);
+  --t-display: clamp(1.75rem, 1.35rem + 1.9vw, 2.6rem);
+
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 22px;
+  --sp-6: 30px;
+  --sp-7: 42px;
+
+  --r-sm: 6px;
+  --r-md: 10px;
+  --r-lg: 14px;
+  --r-xl: 20px;
+  --r-pill: 999px;
+
+  --focus: 0 0 0 2px var(--bg), 0 0 0 4px var(--clover-400);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0b0f0d;
+    --bg-sunken: #080b09;
+    --surface: #121815;
+    --surface-2: #18201c;
+    --surface-3: #1f2823;
+
+    --ink: #e8efea;
+    --ink-2: #9aaba1;
+    --ink-3: #6d7f75;
+
+    --line: #222c27;
+    --line-2: #2e3a34;
+    --line-3: #3d4a43;
+
+    --accent: var(--clover-400);
+    --accent-ink: #8bebb2;
+    --accent-tint: #142219;
+    --accent-line: #27412f;
+    --on-accent: #06120b;
+
+    --ok: #52c383;
+    --ok-tint: #142219;
+    --ok-line: #27412f;
+
+    --warn: #dfa93f;
+    --warn-tint: #241d10;
+    --warn-line: #443521;
+
+    --risk: #e8776c;
+    --risk-tint: #26150f;
+    --risk-line: #4a2b25;
+
+    --shadow-1: 0 1px 2px rgb(0 0 0 / 0.4);
+    --shadow-2: 0 8px 24px -10px rgb(0 0 0 / 0.7), 0 1px 3px rgb(0 0 0 / 0.4);
+
+    --focus: 0 0 0 2px var(--bg), 0 0 0 4px var(--clover-500);
+  }
+}
+
+:root[data-theme="light"] {
+  --bg: #fafbfa;
+  --bg-sunken: #f2f5f3;
+  --surface: #ffffff;
+  --surface-2: #f5f8f6;
+  --surface-3: #eef2ef;
+
+  --ink: #0f1a15;
+  --ink-2: #55665d;
+  --ink-3: #85958c;
+
+  --line: #e3e9e5;
+  --line-2: #d2dbd6;
+  --line-3: #b9c5be;
+
+  --accent: var(--clover-600);
+  --accent-ink: var(--clover-800);
+  --accent-tint: var(--clover-50);
+  --accent-line: var(--clover-200);
+  --on-accent: #ffffff;
+
+  --ok: #2e9a5b;
+  --ok-tint: #edf9f1;
+  --ok-line: #a9e2c1;
+
+  --warn: #a8720c;
+  --warn-tint: #fdf5e5;
+  --warn-line: #ecd7a5;
+
+  --risk: #b23c31;
+  --risk-tint: #fdeeec;
+  --risk-line: #f0c3bd;
+
+  --shadow-1: 0 1px 2px rgb(16 32 24 / 0.05);
+  --shadow-2: 0 6px 20px -8px rgb(16 32 24 / 0.16), 0 1px 3px rgb(16 32 24 / 0.06);
+
+  --focus: 0 0 0 2px var(--bg), 0 0 0 4px var(--clover-400);
+}
+
+:root[data-theme="dark"] {
+  --bg: #0b0f0d;
+  --bg-sunken: #080b09;
+  --surface: #121815;
+  --surface-2: #18201c;
+  --surface-3: #1f2823;
+
+  --ink: #e8efea;
+  --ink-2: #9aaba1;
+  --ink-3: #6d7f75;
+
+  --line: #222c27;
+  --line-2: #2e3a34;
+  --line-3: #3d4a43;
+
+  --accent: var(--clover-400);
+  --accent-ink: #8bebb2;
+  --accent-tint: #142219;
+  --accent-line: #27412f;
+  --on-accent: #06120b;
+
+  --ok: #52c383;
+  --ok-tint: #142219;
+  --ok-line: #27412f;
+
+  --warn: #dfa93f;
+  --warn-tint: #241d10;
+  --warn-line: #443521;
+
+  --risk: #e8776c;
+  --risk-tint: #26150f;
+  --risk-line: #4a2b25;
+
+  --shadow-1: 0 1px 2px rgb(0 0 0 / 0.4);
+  --shadow-2: 0 8px 24px -10px rgb(0 0 0 / 0.7), 0 1px 3px rgb(0 0 0 / 0.4);
+
+  --focus: 0 0 0 2px var(--bg), 0 0 0 4px var(--clover-500);
+}
