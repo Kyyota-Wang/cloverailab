@@ -1,6 +1,6 @@
 # CloverAI Lab — GRE AWA 项目工作日志与交接说明
 
-最后更新：2026-08-16
+最后更新：2026-08-18
 
 这份文档面向后续接手项目的 AI 或开发者。开始工作前应先读本文，再读 `BACKEND.md`（API 契约与后端设计决定）和 `PLAN.md`（数据与阶段规划），然后检查 `web/wrangler.jsonc` 与最新 Git 提交。本文不包含任何密钥值。
 
@@ -199,7 +199,12 @@ cd tools; python extract_rubric.py; python extract_anchors.py; python extract_pr
 | 首次部署 version | `d4367c2b-2205-4d21-9b1b-88c7be5e9aac`（无 Turnstile site key，付费端点 fail closed） |
 | 当前 version | `25bcf25b-3146-451f-8fa7-c835222d72df` |
 | Turnstile widget | Managed 模式，hostname 白名单含 workers.dev 地址 + `cloverailab.com` + `www.cloverailab.com` |
-| 自定义域名 | **未绑定**。`cloverailab.com` 已在 Cloudflare（NS 为 nancy/matt），无 A 记录 |
+| 正式地址 | **https://www.cloverailab.com** 与 **https://cloverailab.com**，两个都在服务同一个站 |
+| 域名绑定方式 | 主域名是 `custom_domain`（Cloudflare 自动管 DNS 与证书）；www 是普通 **route** `www.cloverailab.com/*` + 一条手建的代理 AAAA 记录指向 `100::` |
+
+**为什么 www 用 route 而不是 custom_domain**：面板的 Connect domain 对话框做的是**精确 zone 匹配**，输入子域名会报 "No zones match"，加不进去。Route 表单没有这个毛病。但 route **不会创建 DNS 记录**，这才是 www 一开始完全连不上的真正原因 —— 那个主机名在 DNS 上根本不存在。所以 route 必须配一条自己的代理记录（AAAA → `100::`，Cloudflare 官方的「只走边缘」占位地址，永远不会真的收到流量）。
+
+用 wrangler 部署则没有这个问题：`custom_domain: true` 走 API，不经过那个对话框，而且会连 DNS 记录一起建。**这两步本来一条 `npm run deploy` 就够，是因为 Node 当时不在（见 §10.1）才改用面板手工操作的。**
 
 `pumpkin-ai-v2` 是**账号级的 workers.dev 子域名**，不是项目名 —— 账号下每个 Worker 都是 `<worker名>.pumpkin-ai-v2.workers.dev`。改它会同时改掉 Pumpkin AI 的地址，不要动。绑定自定义域名后可以把 workers.dev 路由关掉。
 
@@ -209,6 +214,8 @@ cd tools; python extract_rubric.py; python extract_anchors.py; python extract_pr
 - `/api/review` 无 token → 403；伪造 token → 403（siteverify 真实拒绝，证明 `TURNSTILE_SECRET` 已设且有效）
 - 真实浏览器端到端：Turnstile 脚本加载 → 铸 token → siteverify 通过 → 后端 200
 - 照抄题目的机械 0 分路径：`usage.calls === 0`、`estimatedCostUsd === 0`，界面显示「未调用模型 · 零成本」
+
+2026-08-18 两个自定义域名上线后复测，`cloverailab.com` 与 `www.cloverailab.com` 均：证书有效、158 题正常、无 token 的 `/api/review` 返回 403、真实浏览器铸出的 token 通过 siteverify 的 **hostname 校验**并拿到 200。hostname 校验是换域名时唯一真正有风险的一条（Worker 要求 token 解出的域名严格等于请求域名），两个域名都成立。
 - **尚未验证**：`ANTHROPIC_API_KEY` 是否已设。机械 0 分路径在碰 provider 之前就短路了，而 `createProvider` 缺 key 也不抛错（构造函数会回退去找 OAuth profile），所以那次 200 证明不了这一点。要确认只有两条路：面板上看 secret 列表，或者跑一次真实批改（约 $0.15）
 
 以下仍未做，视情况再评估：
@@ -221,17 +228,29 @@ cd tools; python extract_rubric.py; python extract_anchors.py; python extract_pr
 
 ### 10.1 Node 不在 PATH 里，而且消失过一次
 
-这台机器的 Node 24.19 原本装在 `C:\Users\kangc\AppData\Local\nodejs`（**不在系统 PATH**），命令前需要：
+**当前路径（2026-08-18 重装后）：**
 
-```powershell
-$env:PATH = "$env:LOCALAPPDATA\nodejs;$env:PATH"
+```
+C:\Users\kangc\AppData\Local\Microsoft\WinGet\Packages\OpenJS.NodeJS.LTS_Microsoft.Winget.Source_8wekyb3d8bbwe\node-v24.19.0-win-x64
 ```
 
-⚠️ **2026-08-17：这个目录整个消失了。**同一天早些时候还能正常 `npm install` / `npm run deploy`，之后 `Test-Path` 与 `where.exe node` 都找不到，`$ProgramFiles\nodejs`、nvm、fnm、volta、scoop 各常见位置也都没有。原因未查明（未做任何卸载操作）。
+**它不在系统 PATH 上**（winget 提示改了 PATH，但新开的 shell 里仍然看不到）。每次命令前要加：
 
-后果：**不影响已上线的 Worker**（它跑在 Cloudflare 上），但本地的 `npm run build` / `npm test` / `npm run deploy` / `wrangler` 全部不可用。
+```bash
+export PATH="/c/Users/kangc/AppData/Local/Microsoft/WinGet/Packages/OpenJS.NodeJS.LTS_Microsoft.Winget.Source_8wekyb3d8bbwe/node-v24.19.0-win-x64:$PATH"
+```
 
-恢复：从 nodejs.org 重装 Node 24+，或 `winget install OpenJS.NodeJS.LTS`，然后 `npm install` 重建 `node_modules`。装完确认 `node -v` ≥ 24。
+```powershell
+$env:PATH = "$env:LOCALAPPDATA\Microsoft\WinGet\Packages\OpenJS.NodeJS.LTS_Microsoft.Winget.Source_8wekyb3d8bbwe\node-v24.19.0-win-x64;$env:PATH"
+```
+
+**历史**：原本装在 `C:\Users\kangc\AppData\Local\nodejs`，同样不在 PATH 上。**2026-08-17 那个目录整个消失了** —— 同一天早些时候还能正常 `npm install` / `npm run deploy`，之后 `Test-Path` 与 `where.exe node` 都找不到，其它常见位置（Program Files、nvm、fnm、volta、scoop）也都没有。原因未查明，未做任何卸载操作。
+
+期间影响：**已上线的 Worker 完全不受影响**（它跑在 Cloudflare 上），但本地 `npm run build` / `npm test` / `npm run deploy` / `wrangler` 全部不可用，持续约一天。
+
+2026-08-18 用 `winget install OpenJS.NodeJS.LTS --scope user` 重装 24.19.0（与消失的那份同版本）。`node_modules` 未受影响，不需要重新 `npm install`。恢复后 72/72 测试通过、两个 typecheck 均干净。
+
+⚠️ 如果再次出现 `node: command not found`，先按上面的路径找，再考虑重装 —— 不要假设它还在老位置。
 
 ### 10.2 `wrangler dev` 在启动时给 `web/dist` 拍快照
 
