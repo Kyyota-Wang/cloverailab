@@ -28,7 +28,7 @@
 | Worker 名 | `cloverailab` |
 | Cloudflare 账号 | `yunlongwang1987@gmail.com` |
 | Account ID | `bd61a7a5c0e63e9a5c05f70fb97a9b97`（标识符，不是密钥） |
-| 当前线上 version | `bc9670cc-7dbd-4e7e-8437-892c4ceb9cea` |
+| 当前线上 version | `99c8e2a5-0f62-49e0-b986-b84a4e02f7c7` |
 | 上一个可回退 version | `25bcf25b-3146-451f-8fa7-c835222d72df` |
 | Git 仓库 | `Kyyota-Wang/cloverailab`，分支 `main` |
 
@@ -681,7 +681,27 @@ git -c safe.directory="C:/Users/kangc/OneDrive/Documents/cc_sandbox/GRE writer" 
 
 `git push` 成功时 PowerShell 也会打红字 `NativeCommandError`。看实际输出行（比如 `main -> main`）判断，不要看红字。
 
-### 9.10 结构化输出的 schema 限制
+### 9.10 社交分享预览（og:image）有三个独立的坑
+
+一开始分享链接完全不出图，原因是三条叠加：
+
+1. `og:image` 指向的文件**根本不存在**（404）
+2. 就算存在也没用 —— **LinkedIn / Facebook / X 都不抓 SVG**，必须是 PNG 或 JPG
+3. 路径是**相对的**（`/og.svg`），这些抓取器在没有 base URL 的情况下解析不了，必须写绝对 URL
+
+修法是 `tools/make-social-images.mjs`（`npm run images`）把矢量源栅格化成 1200×630 的 PNG，meta 里写绝对 URL。
+
+**还有一条**：Workers 静态资源默认的 `Content-Type: text/html` **不带 charset**，标题里的破折号可能被错误解码。用 `web/app/public/_headers` 补上 `charset=utf-8`。
+
+**最后也是最容易误判的一条：LinkedIn 会缓存首次抓取结果约 7 天。**如果第一次抓的时候图是坏的，之后修好了也不会自动更新。
+
+- 强制重抓：https://www.linkedin.com/post-inspector/
+- 判断是不是缓存问题：分享一个**带查询串的新 URL**（如 `https://cloverailab.com/?v=2`）。LinkedIn 没见过这个 URL，必须现抓。如果新 URL 出图而旧的不出，就是纯缓存问题
+- 如果**新 URL 也不出图**，才该怀疑 Cloudflare 侧拦了爬虫 —— 去 zone → Security → Bots，确认 Bot Fight Mode 没有拦截 verified bots
+
+Facebook 用 https://developers.facebook.com/tools/debug/ 刷新。
+
+### 9.11 结构化输出的 schema 限制
 
 不支持 `minimum` `maximum` `multipleOf` `minLength` `maxLength` `maxItems`，以及大于 1 的 `minItems`。所以「必须有 5 个评分轴」是用 5 个 required 属性实现的，不是数组长度约束。有测试专门守这条。
 

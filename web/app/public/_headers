@@ -1,0 +1,14 @@
+# Cloudflare Workers static assets reads this file.
+#
+# The charset matters for scrapers that trust the HTTP header over the
+# document's own <meta charset>: without it the em dash in the title can
+# arrive mojibake. Vite copies this file into the build as-is.
+
+/
+  Content-Type: text/html; charset=utf-8
+
+/index.html
+  Content-Type: text/html; charset=utf-8
+
+/og.png
+  Cache-Control: public, max-age=86400
