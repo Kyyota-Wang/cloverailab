@@ -15,7 +15,8 @@
     "build": "vite build --config web/vite.config.ts",
     "dev": "npm run build && wrangler dev --config web/wrangler.jsonc --port 8788",
     "dev:ui": "vite --config web/vite.config.ts",
-    "deploy": "npm run build && wrangler deploy --config web/wrangler.jsonc"
+    "deploy": "npm run build && wrangler deploy --config web/wrangler.jsonc",
+    "images": "node tools/make-social-images.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.117.1",
@@ -23,6 +24,7 @@
     "react-dom": "^19.2.8"
   },
   "devDependencies": {
+    "@resvg/resvg-js": "^2.6.2",
     "@types/node": "^24.0.0",
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.4",

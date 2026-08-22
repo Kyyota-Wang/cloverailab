@@ -24,12 +24,12 @@
 | 项 | 值 |
 |---|---|
 | 正式地址 | https://www.cloverailab.com 和 https://cloverailab.com |
-| 测试地址 | https://cloverailab.pumpkin-ai-v2.workers.dev |
+| workers.dev 地址 | **已关闭**（`workers_dev: false`）。需要临时启用改成 `true` 重新部署即可 |
 | Worker 名 | `cloverailab` |
 | Cloudflare 账号 | `yunlongwang1987@gmail.com` |
 | Account ID | `bd61a7a5c0e63e9a5c05f70fb97a9b97`（标识符，不是密钥） |
-| 当前线上 version | `25bcf25b-3146-451f-8fa7-c835222d72df` |
-| 上一个可回退 version | `d4367c2b-2205-4d21-9b1b-88c7be5e9aac` |
+| 当前线上 version | `bc9670cc-7dbd-4e7e-8437-892c4ceb9cea` |
+| 上一个可回退 version | `25bcf25b-3146-451f-8fa7-c835222d72df` |
 | Git 仓库 | `Kyyota-Wang/cloverailab`，分支 `main` |
 
 **⚠️ 这个仓库必须保持 private。** `kb/anchors.json` 收录 18 篇 ETS 官方评分范文及官方评分员评语，`kb/prompts_issue.json` 收录 158 道官方题 —— ETS 版权材料，内部可用，不可公开转载。

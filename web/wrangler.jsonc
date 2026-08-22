@@ -9,6 +9,13 @@
   "assets": { "directory": "./dist", "binding": "ASSETS" },
   "observability": { "enabled": true },
 
+  // Off deliberately. The site answers on its own domains, and a live
+  // *.workers.dev copy is a second public address serving identical content --
+  // duplicate content for crawlers and one more surface to protect. Omitting
+  // this key entirely also turns it off, but silently; stating it means the
+  // next deploy does not look like it broke something.
+  "workers_dev": false,
+
   // The public addresses. Both serve the app.
   //
   // The apex is a `custom_domain`, so Cloudflare manages its DNS record and
