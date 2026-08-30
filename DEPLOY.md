@@ -26,8 +26,8 @@
 | 正式地址 | https://www.cloverailab.com 和 https://cloverailab.com |
 | workers.dev 地址 | **已关闭**（`workers_dev: false`）。需要临时启用改成 `true` 重新部署即可 |
 | Worker 名 | `cloverailab` |
-| Cloudflare 账号 | `yunlongwang1987@gmail.com` |
-| Account ID | `bd61a7a5c0e63e9a5c05f70fb97a9b97`（标识符，不是密钥） |
+| Cloudflare 账号 | `<你的 Cloudflare 账号邮箱>` |
+| Account ID | `<ACCOUNT_ID>`（标识符，不是密钥） |
 | 当前线上 version | `99c8e2a5-0f62-49e0-b986-b84a4e02f7c7` |
 | 上一个可回退 version | `25bcf25b-3146-451f-8fa7-c835222d72df` |
 | Git 仓库 | `Kyyota-Wang/cloverailab`，分支 `main` |
@@ -255,7 +255,7 @@ npx wrangler whoami
 ```powershell
 # PowerShell，仅当前会话
 $env:CLOUDFLARE_API_TOKEN = "<你的 token>"
-$env:CLOUDFLARE_ACCOUNT_ID = "bd61a7a5c0e63e9a5c05f70fb97a9b97"
+$env:CLOUDFLARE_ACCOUNT_ID = "<ACCOUNT_ID>"
 ```
 
 wrangler 会自动读这两个变量。
